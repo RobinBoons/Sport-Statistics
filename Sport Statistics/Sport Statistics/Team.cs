@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sport_Statistics
 {
-    class Team
+    public class Team
     {
         public string Name { get; private set; }
         public string Club { get; private set; }
