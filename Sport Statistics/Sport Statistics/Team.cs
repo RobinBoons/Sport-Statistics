@@ -10,6 +10,7 @@ namespace Sport_Statistics
     {
         public string Name { get; private set; }
         public string Club { get; private set; }
+        public List<Player> TeamPlayers { get; set; }
 
         public Team(string name, string club)
         {
@@ -22,7 +23,7 @@ namespace Sport_Statistics
             {
                 throw new ArgumentNullException();
             }
-
+            TeamPlayers = new List<Player>();
             Name = name;
             Club = club;
         }

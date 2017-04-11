@@ -10,8 +10,8 @@ namespace Sport_Statistics
 {
     class Administration
     {
-        List<Team> Teams;
-        List<Player> Players;
+        public List<Team> Teams;
+        public List<Player> Players;
 
         public Administration()
         {

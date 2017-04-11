@@ -31,27 +31,27 @@
             this.lbTeams = new System.Windows.Forms.ListBox();
             this.lbTeamSpelers = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnAssignToTeam = new System.Windows.Forms.Button();
-            this.btnRemoveFromTeam = new System.Windows.Forms.Button();
-            this.tbNewPlayerName = new System.Windows.Forms.TextBox();
-            this.tbNewPlayerNumber = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnAddNewPlayer = new System.Windows.Forms.Button();
+            this.btnRemoveTeam = new System.Windows.Forms.Button();
+            this.tbNewTeamClub = new System.Windows.Forms.TextBox();
             this.btnAddNewTeam = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbNewTeamName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbNewTeamClub = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRemovePlayer = new System.Windows.Forms.Button();
+            this.btnAddNewPlayer = new System.Windows.Forms.Button();
+            this.tbNewPlayerNumber = new System.Windows.Forms.MaskedTextBox();
+            this.btnRemoveFromTeam = new System.Windows.Forms.Button();
+            this.tbNewPlayerName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnAssignToTeam = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnSafeToFile = new System.Windows.Forms.Button();
             this.btnLoadFromFile = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnRemovePlayer = new System.Windows.Forms.Button();
-            this.btnRemoveTeam = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +64,6 @@
             this.lbTeams.Name = "lbTeams";
             this.lbTeams.Size = new System.Drawing.Size(279, 84);
             this.lbTeams.TabIndex = 0;
-            this.lbTeams.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // lbTeamSpelers
             // 
@@ -93,6 +92,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Teams";
             // 
+            // btnRemoveTeam
+            // 
+            this.btnRemoveTeam.Location = new System.Drawing.Point(79, 370);
+            this.btnRemoveTeam.Name = "btnRemoveTeam";
+            this.btnRemoveTeam.Size = new System.Drawing.Size(100, 27);
+            this.btnRemoveTeam.TabIndex = 10;
+            this.btnRemoveTeam.Text = "Verwijder";
+            this.btnRemoveTeam.UseVisualStyleBackColor = true;
+            // 
+            // tbNewTeamClub
+            // 
+            this.tbNewTeamClub.Location = new System.Drawing.Point(185, 342);
+            this.tbNewTeamClub.Name = "tbNewTeamClub";
+            this.tbNewTeamClub.Size = new System.Drawing.Size(100, 22);
+            this.tbNewTeamClub.TabIndex = 14;
+            // 
+            // btnAddNewTeam
+            // 
+            this.btnAddNewTeam.Location = new System.Drawing.Point(185, 370);
+            this.btnAddNewTeam.Name = "btnAddNewTeam";
+            this.btnAddNewTeam.Size = new System.Drawing.Size(100, 27);
+            this.btnAddNewTeam.TabIndex = 13;
+            this.btnAddNewTeam.Text = "Voeg Toe";
+            this.btnAddNewTeam.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -101,6 +125,31 @@
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Spelers";
+            // 
+            // tbNewTeamName
+            // 
+            this.tbNewTeamName.Location = new System.Drawing.Point(185, 314);
+            this.tbNewTeamName.Name = "tbNewTeamName";
+            this.tbNewTeamName.Size = new System.Drawing.Size(100, 22);
+            this.tbNewTeamName.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 345);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Club:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 317);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Naam:";
             // 
             // listBox1
             // 
@@ -129,14 +178,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Spelers";
             // 
-            // btnAssignToTeam
+            // btnRemovePlayer
             // 
-            this.btnAssignToTeam.Location = new System.Drawing.Point(6, 262);
-            this.btnAssignToTeam.Name = "btnAssignToTeam";
-            this.btnAssignToTeam.Size = new System.Drawing.Size(135, 46);
-            this.btnAssignToTeam.TabIndex = 4;
-            this.btnAssignToTeam.Text = "Voeg Toe Aan Team";
-            this.btnAssignToTeam.UseVisualStyleBackColor = true;
+            this.btnRemovePlayer.Location = new System.Drawing.Point(79, 370);
+            this.btnRemovePlayer.Name = "btnRemovePlayer";
+            this.btnRemovePlayer.Size = new System.Drawing.Size(100, 27);
+            this.btnRemovePlayer.TabIndex = 9;
+            this.btnRemovePlayer.Text = "Verwijder";
+            this.btnRemovePlayer.UseVisualStyleBackColor = true;
+            // 
+            // btnAddNewPlayer
+            // 
+            this.btnAddNewPlayer.Location = new System.Drawing.Point(185, 370);
+            this.btnAddNewPlayer.Name = "btnAddNewPlayer";
+            this.btnAddNewPlayer.Size = new System.Drawing.Size(100, 27);
+            this.btnAddNewPlayer.TabIndex = 8;
+            this.btnAddNewPlayer.Text = "Voeg Toe";
+            this.btnAddNewPlayer.UseVisualStyleBackColor = true;
+            // 
+            // tbNewPlayerNumber
+            // 
+            this.tbNewPlayerNumber.Location = new System.Drawing.Point(185, 342);
+            this.tbNewPlayerNumber.Mask = "00";
+            this.tbNewPlayerNumber.Name = "tbNewPlayerNumber";
+            this.tbNewPlayerNumber.PromptChar = ' ';
+            this.tbNewPlayerNumber.Size = new System.Drawing.Size(100, 22);
+            this.tbNewPlayerNumber.TabIndex = 7;
             // 
             // btnRemoveFromTeam
             // 
@@ -154,14 +221,23 @@
             this.tbNewPlayerName.Size = new System.Drawing.Size(100, 22);
             this.tbNewPlayerName.TabIndex = 6;
             // 
-            // tbNewPlayerNumber
+            // label3
             // 
-            this.tbNewPlayerNumber.Location = new System.Drawing.Point(185, 342);
-            this.tbNewPlayerNumber.Mask = "00";
-            this.tbNewPlayerNumber.Name = "tbNewPlayerNumber";
-            this.tbNewPlayerNumber.PromptChar = ' ';
-            this.tbNewPlayerNumber.Size = new System.Drawing.Size(100, 22);
-            this.tbNewPlayerNumber.TabIndex = 7;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 345);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Nummer:";
+            // 
+            // btnAssignToTeam
+            // 
+            this.btnAssignToTeam.Location = new System.Drawing.Point(6, 262);
+            this.btnAssignToTeam.Name = "btnAssignToTeam";
+            this.btnAssignToTeam.Size = new System.Drawing.Size(135, 46);
+            this.btnAssignToTeam.TabIndex = 4;
+            this.btnAssignToTeam.Text = "Voeg Toe Aan Team";
+            this.btnAssignToTeam.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -172,65 +248,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Naam:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 345);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Nummer:";
-            // 
-            // btnAddNewPlayer
-            // 
-            this.btnAddNewPlayer.Location = new System.Drawing.Point(185, 370);
-            this.btnAddNewPlayer.Name = "btnAddNewPlayer";
-            this.btnAddNewPlayer.Size = new System.Drawing.Size(100, 27);
-            this.btnAddNewPlayer.TabIndex = 8;
-            this.btnAddNewPlayer.Text = "Voeg Toe";
-            this.btnAddNewPlayer.UseVisualStyleBackColor = true;
-            // 
-            // btnAddNewTeam
-            // 
-            this.btnAddNewTeam.Location = new System.Drawing.Point(185, 370);
-            this.btnAddNewTeam.Name = "btnAddNewTeam";
-            this.btnAddNewTeam.Size = new System.Drawing.Size(100, 27);
-            this.btnAddNewTeam.TabIndex = 13;
-            this.btnAddNewTeam.Text = "Voeg Toe";
-            this.btnAddNewTeam.UseVisualStyleBackColor = true;
-            // 
-            // tbNewTeamName
-            // 
-            this.tbNewTeamName.Location = new System.Drawing.Point(185, 314);
-            this.tbNewTeamName.Name = "tbNewTeamName";
-            this.tbNewTeamName.Size = new System.Drawing.Size(100, 22);
-            this.tbNewTeamName.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 345);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Club:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 317);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Naam:";
-            // 
-            // tbNewTeamClub
-            // 
-            this.tbNewTeamClub.Location = new System.Drawing.Point(185, 342);
-            this.tbNewTeamClub.Name = "tbNewTeamClub";
-            this.tbNewTeamClub.Size = new System.Drawing.Size(100, 22);
-            this.tbNewTeamClub.TabIndex = 14;
-            // 
             // btnSafeToFile
             // 
             this.btnSafeToFile.Location = new System.Drawing.Point(12, 421);
@@ -239,6 +256,7 @@
             this.btnSafeToFile.TabIndex = 5;
             this.btnSafeToFile.Text = "Safe";
             this.btnSafeToFile.UseVisualStyleBackColor = true;
+            this.btnSafeToFile.Click += new System.EventHandler(this.btnSafeToFile_Click);
             // 
             // btnLoadFromFile
             // 
@@ -248,28 +266,11 @@
             this.btnLoadFromFile.TabIndex = 6;
             this.btnLoadFromFile.Text = "Load";
             this.btnLoadFromFile.UseVisualStyleBackColor = true;
+            this.btnLoadFromFile.Click += new System.EventHandler(this.btnLoadFromFile_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnRemovePlayer
-            // 
-            this.btnRemovePlayer.Location = new System.Drawing.Point(79, 370);
-            this.btnRemovePlayer.Name = "btnRemovePlayer";
-            this.btnRemovePlayer.Size = new System.Drawing.Size(100, 27);
-            this.btnRemovePlayer.TabIndex = 9;
-            this.btnRemovePlayer.Text = "Verwijder";
-            this.btnRemovePlayer.UseVisualStyleBackColor = true;
-            // 
-            // btnRemoveTeam
-            // 
-            this.btnRemoveTeam.Location = new System.Drawing.Point(79, 370);
-            this.btnRemoveTeam.Name = "btnRemoveTeam";
-            this.btnRemoveTeam.Size = new System.Drawing.Size(100, 27);
-            this.btnRemoveTeam.TabIndex = 10;
-            this.btnRemoveTeam.Text = "Verwijder";
-            this.btnRemoveTeam.UseVisualStyleBackColor = true;
             // 
             // SportStatisticsForm
             // 
@@ -282,6 +283,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "SportStatisticsForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.SportStatisticsForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
