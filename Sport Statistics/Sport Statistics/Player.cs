@@ -8,5 +8,29 @@ namespace Sport_Statistics
 {
     class Player
     {
+        public string Name { get; private set; }
+        public int Number { get; private set; }
+        
+
+        public Player(string name, int number)
+        {
+            if(name == null)
+            {
+                throw new ArgumentNullException();
+            }
+            
+            if(number <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            Name = name;
+            Number = number;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
