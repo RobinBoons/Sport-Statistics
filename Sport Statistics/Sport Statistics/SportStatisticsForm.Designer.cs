@@ -1,6 +1,6 @@
 ﻿namespace Sport_Statistics
 {
-	partial class Form1
+	partial class SportStatisticsForm
 	{
 		/// <summary>
 		/// Required designer variable.
