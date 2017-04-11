@@ -3,10 +3,160 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace Sport_Statistics
 {
     class Administration
     {
+        List<Team> Teams;
+        List<Player> Players;
+
+        public Administration()
+        {
+            Teams = new List<Team>();
+            Players = new List<Player>();
+        }
+
+
+        public bool AddPlayer(Player player)
+        {
+            if (FindPlayer(player.Name) == null)
+            {
+                Players.Add(player);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool AddTeam(Team team)
+        {
+            if (FindTeam(team.Name) == null)
+            {
+                Teams.Add(team);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool RemovePlayer(string name)
+        {
+            Player player = FindPlayer(name);
+            if(player != null)
+            {
+                Players.Remove(player);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool RemoveTeam(string name)
+        {
+            Team team = FindTeam(name);
+            if (team != null)
+            {
+                Teams.Remove(team);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Player FindPlayer(string name)
+        {
+            foreach(Player player in Players)
+            {
+                if (player.Name == name)
+                {
+                    return player;
+                }
+            }
+            return null;
+        }
+
+        public Team FindTeam(string name)
+        {
+            foreach (Team team in Teams)
+            {
+                if (team.Name == name)
+                {
+                    return team;
+                }
+            }
+            return null;
+        }
+
+        public bool SafeToFile(string fileName) //TODO nog voor speleers en teams mogelijk maken
+        {
+            if (fileName != null)
+            {
+                string file = fileName + ".plyr";
+                using (Stream FileStream = File.Open(file, FileMode.Create))
+                {
+                    BinaryFormatter serializer = new BinaryFormatter();
+                    serializer.Serialize(FileStream, Players);
+                    FileStream.Close();
+                }
+                file = fileName + ".team";
+                using (Stream FileStream = File.Open(file, FileMode.Create))
+                {
+                    BinaryFormatter serializer = new BinaryFormatter();
+                    serializer.Serialize(FileStream, Teams);
+                    FileStream.Close();
+                }
+                return true;
+            }
+            return false;
+        }
+
+        public bool LoadFromFile(string fileName) //TODO nog voor spelers en teams mogelijk maken
+        {
+            if (fileName != null)
+            {
+                if (fileName.Contains(".plyr"))
+                {
+                    using (Stream fileStream = File.Open(fileName, FileMode.Open))
+                    {
+                        BinaryFormatter bin = new BinaryFormatter();
+                        Teams = (List<Team>)bin.Deserialize(fileStream);
+                        fileStream.Close();
+                    }
+                    return true;
+                }
+                if (fileName.Contains(".team"))
+                {
+                    using (Stream fileStream = File.Open(fileName, FileMode.Open))
+                    {
+                        BinaryFormatter bin = new BinaryFormatter();
+                        Players = (List<Player>)bin.Deserialize(fileStream);
+                        fileStream.Close();
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool AddPlayerToTeam(Team team, Player player)
+        {
+            team.TeamPlayers.Add(player);
+        }
+
+        public bool RemovePlayerFromTeam(Team team, Player player)
+        {
+            team.TeamPlayers.Remove(player);
+        }
     }
 }
