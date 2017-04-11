@@ -6,15 +6,30 @@ using System.Threading.Tasks;
 
 namespace Sport_Statistics
 {
-    public class Sport
+    public abstract class Sport
     {
-        public int Score { get; private set; }
-        public int Attempts { get; private set; }
+        public decimal Score { get; private set; }
+        public decimal Attempts { get; private set; }
         public decimal ScorePercentage { get; private set; }
 
-        public Sport()
+        public Sport(decimal score, decimal attempts, decimal scorePercentage)
         {
+            if (score < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            if (attempts < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            if (scorePercentage < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
 
+            Score = score;
+            Attempts = attempts;
+            ScorePercentage = scorePercentage;
         }
 
         public void CalculatePercentage()

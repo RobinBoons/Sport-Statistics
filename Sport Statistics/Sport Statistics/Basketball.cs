@@ -8,9 +8,6 @@ namespace Sport_Statistics
 {
     public class Basketball : Sport
     {
-        public decimal Score { get; private set; }
-        public decimal FieldGoalAttempts { get; private set; }
-        public decimal FieldGoalPercentage { get; private set; }
         public decimal FreeThrowMade { get; private set; }
         public decimal FreeThrowAttempts { get; private set; }
         public decimal FreeThrowPercentage { get; private set; }
@@ -24,20 +21,8 @@ namespace Sport_Statistics
         public decimal ThreePointersMade { get; private set; }
         public decimal ThreePointersPercentage { get; private set; }
 
-        public Basketball(decimal score, decimal fieldGoalAttempts, decimal fieldGoalPercentage, decimal freeThrowMade, decimal freeThrowAttempts, decimal freeThrowPercentage, decimal rebounds, decimal turnOvers, decimal fouls, decimal teamFouls, decimal steals, decimal assists, decimal threePointersMade, decimal threePointersAttempted, decimal threePointersPercentage)
+        public Basketball(decimal score, decimal fieldGoalAttempts, decimal fieldGoalPercentage, decimal freeThrowMade, decimal freeThrowAttempts, decimal freeThrowPercentage, decimal rebounds, decimal turnOvers, decimal fouls, decimal teamFouls, decimal steals, decimal assists, decimal threePointersMade, decimal threePointersAttempted, decimal threePointersPercentage):base(score, fieldGoalAttempts, fieldGoalPercentage)
         {
-            if(score < 0)
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-            if (fieldGoalAttempts < 0)
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-            if(fieldGoalPercentage < 0)
-            {
-                throw new ArgumentOutOfRangeException();
-            }
             if (freeThrowMade < 0)
             {
                 throw new ArgumentOutOfRangeException();
