@@ -96,10 +96,18 @@ namespace Sport_Statistics
             return null;
         }
 
-        public bool SafeToFile(string fileName) //TODO nog voor speleers en teams mogelijk maken
+        public bool SafeToFile(string fileName) 
         {
             if (fileName != null)
             {
+                if(fileName.Contains("."))
+                {
+                    string[] sFileName = fileName.Split('.');
+                    if(sFileName.Count() == 2 || sFileName[1].Length >= 3 || sFileName[1].Length <= 4)
+                    {
+                        fileName = sFileName[0];
+                    }
+                }
                 string file = fileName + ".plyr";
                 using (Stream FileStream = File.Open(file, FileMode.Create))
                 {
@@ -119,7 +127,7 @@ namespace Sport_Statistics
             return false;
         }
 
-        public bool LoadFromFile(string fileName) //TODO nog voor spelers en teams mogelijk maken
+        public bool LoadFromFile(string fileName) 
         {
             if (fileName != null)
             {
@@ -147,14 +155,37 @@ namespace Sport_Statistics
             return false;
         }
 
-      /*  public bool AddPlayerToTeam(Team team, Player player)
+        public bool AddPlayerToTeam(Team team, Player player)
         {
-            team.TeamPlayers.Add(player);
+            if(team != null || player != null)
+            {
+                foreach(Player players in team.TeamPlayers)
+                {
+                    if(player == players)
+                    {
+                        return false;
+                    }
+                }
+                team.TeamPlayers.Add(player);
+                return true;
+            }
+            return false;
         }
 
         public bool RemovePlayerFromTeam(Team team, Player player)
         {
-            team.TeamPlayers.Remove(player);
-        }*/
+            if (team != null || player != null)
+            {
+                foreach(Player players in team.TeamPlayers)
+                {
+                    if(players == player)
+                    {
+                        team.TeamPlayers.Remove(player);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }

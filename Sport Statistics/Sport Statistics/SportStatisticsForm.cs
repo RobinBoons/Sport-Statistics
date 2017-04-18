@@ -22,9 +22,6 @@ namespace Sport_Statistics
         private void SportStatisticsForm_Load(object sender, EventArgs e)
         {
             administratie = new Administration();
-            //lbTeams.DataBindings.Add(administratie.Teams);
-            lbTeams.DataSource = administratie.Teams;
-            lbTeams.DisplayMember = "Name";
             Player player = new Player("Dummy1", 32);
             administratie.AddPlayer(player);
             player = new Player("Dummy2", 4);
@@ -45,14 +42,13 @@ namespace Sport_Statistics
             administratie.AddTeam(team);
             team = new Team("Team5", "Club E");
             administratie.AddTeam(team);
-            lbTeams.Refresh();
             foreach(Player players in administratie.Players)
             {
                 lbPlayers.Items.Add(players);
             }
             foreach(Team teams in administratie.Teams)
             {
-                lbTeams.Items.Add(teams);
+               lbTeams.Items.Add(teams);
             }
         }
 
@@ -78,6 +74,22 @@ namespace Sport_Statistics
                 openFileDialog1.ShowDialog();
                 string file = openFileDialog1.FileName;
                 administratie.LoadFromFile(file);
+                if(file.Contains(".team"))
+                {
+                    lbTeams.Items.Clear();
+                    foreach (Team teams in administratie.Teams)
+                    {
+                        lbTeams.Items.Add(teams);
+                    }
+                }
+                else if(file.Contains(".plyr"))
+                {
+                    lbPlayers.Items.Clear();
+                    foreach (Player players in administratie.Players)
+                    {
+                        lbPlayers.Items.Add(players);
+                    }
+                }
             }
             catch(IOException exception)
             {
@@ -94,6 +106,7 @@ namespace Sport_Statistics
                 if (administratie.AddTeam(team))
                 {
                     MessageBox.Show("Team: " + team.ToString() + " Is Succesvol Toegevoegd");
+                    lbTeams.Items.Clear();
                     foreach (Team teams in administratie.Teams)
                     {
                         lbTeams.Items.Add(teams);
@@ -113,6 +126,7 @@ namespace Sport_Statistics
                 if (administratie.RemoveTeam((Team)lbTeams.SelectedItem))
                 {
                     MessageBox.Show("Team Succesvol Verwijderd");
+                    lbTeams.Items.Clear();
                     foreach (Team teams in administratie.Teams)
                     {
                         lbTeams.Items.Add(teams);
@@ -127,12 +141,13 @@ namespace Sport_Statistics
 
         private void btnAddNewPlayer_Click(object sender, EventArgs e)
         {
-            if (tbNewTeamName.Text != "" || tbNewTeamClub.Text != "")
+            if (tbNewPlayerName.Text != "" || nUDAddPlayer.Value >= 0)
             {
                 Player player = new Player(tbNewPlayerName.Text, (int)nUDAddPlayer.Value);
                 if (administratie.AddPlayer(player))
                 {
                     MessageBox.Show("Speler: " + player.ToString() + " Is Succesvol Toegevoegd");
+                    lbPlayers.Items.Clear();
                     foreach (Player players in administratie.Players)
                     {
                         lbPlayers.Items.Add(players);
@@ -152,6 +167,7 @@ namespace Sport_Statistics
                 if (administratie.RemovePlayer((Player)lbPlayers.SelectedItem))
                 {
                     MessageBox.Show("Speler Succesvol Verwijderd");
+                    lbPlayers.Items.Clear();
                     foreach (Player players in administratie.Players)
                     {
                         lbPlayers.Items.Add(players);
@@ -160,6 +176,53 @@ namespace Sport_Statistics
                 else
                 {
                     MessageBox.Show("Speler Niet Verwijderd");
+                }
+            }
+        }
+
+        private void btnAssignToTeam_Click(object sender, EventArgs e)
+        {
+            Player player = (Player)lbPlayers.SelectedItem;
+            Team team = (Team)lbTeams.SelectedItem;
+            if(player != null || team != null)
+            {
+                if(administratie.AddPlayerToTeam(team, player))
+                {
+                    MessageBox.Show(player.ToString() + " Is succesvol aan " + team.ToString());
+                }
+                else
+                {
+                    MessageBox.Show(player.ToString() + " Is niet tegevoegd aan " + team.ToString());
+                }
+            }
+        }
+
+        private void btnRemoveFromTeam_Click(object sender, EventArgs e)
+        {
+            Player player = (Player)lbPlayers.SelectedItem;
+            Team team = (Team)lbTeams.SelectedItem;
+            if (player != null || team != null)
+            {
+                if (administratie.RemovePlayerFromTeam(team, player))
+                {
+                    MessageBox.Show(player.ToString() + " Is succesvol verwijderd uit " + team.ToString());
+                }
+                else
+                {
+                    MessageBox.Show(player.ToString() + " Is niet verwijderd uit " + team.ToString());
+                }
+            }
+        }
+
+        private void lbTeams_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbTeamSpelers.Items.Clear();
+            Team team = (Team)lbTeams.SelectedItem;
+            if(team != null)
+            {
+                foreach(Player player in team.TeamPlayers)
+                {
+                    lbTeamSpelers.Items.Add(player);
                 }
             }
         }

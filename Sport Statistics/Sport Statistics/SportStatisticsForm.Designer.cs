@@ -65,6 +65,7 @@
             this.lbTeams.Name = "lbTeams";
             this.lbTeams.Size = new System.Drawing.Size(279, 84);
             this.lbTeams.TabIndex = 0;
+            this.lbTeams.SelectedIndexChanged += new System.EventHandler(this.lbTeams_SelectedIndexChanged);
             // 
             // lbTeamSpelers
             // 
@@ -209,6 +210,7 @@
             this.btnRemoveFromTeam.TabIndex = 5;
             this.btnRemoveFromTeam.Text = "Verwijder Uit Team";
             this.btnRemoveFromTeam.UseVisualStyleBackColor = true;
+            this.btnRemoveFromTeam.Click += new System.EventHandler(this.btnRemoveFromTeam_Click);
             // 
             // tbNewPlayerName
             // 
@@ -234,6 +236,7 @@
             this.btnAssignToTeam.TabIndex = 4;
             this.btnAssignToTeam.Text = "Voeg Toe Aan Team";
             this.btnAssignToTeam.UseVisualStyleBackColor = true;
+            this.btnAssignToTeam.Click += new System.EventHandler(this.btnAssignToTeam_Click);
             // 
             // label2
             // 
@@ -274,6 +277,11 @@
             this.nUDAddPlayer.Name = "nUDAddPlayer";
             this.nUDAddPlayer.Size = new System.Drawing.Size(100, 22);
             this.nUDAddPlayer.TabIndex = 10;
+            this.nUDAddPlayer.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // SportStatisticsForm
             // 
