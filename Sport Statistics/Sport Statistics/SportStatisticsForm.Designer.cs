@@ -58,6 +58,8 @@
             this.btnLoadFromFile = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.rbHandball = new System.Windows.Forms.RadioButton();
+            this.rbBasketball = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDAddPlayer)).BeginInit();
@@ -66,20 +68,20 @@
             // lbTeams
             // 
             this.lbTeams.FormattingEnabled = true;
-            this.lbTeams.ItemHeight = 16;
-            this.lbTeams.Location = new System.Drawing.Point(6, 21);
+            this.lbTeams.Location = new System.Drawing.Point(4, 17);
+            this.lbTeams.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbTeams.Name = "lbTeams";
-            this.lbTeams.Size = new System.Drawing.Size(279, 84);
+            this.lbTeams.Size = new System.Drawing.Size(210, 69);
             this.lbTeams.TabIndex = 0;
             this.lbTeams.SelectedIndexChanged += new System.EventHandler(this.lbTeams_SelectedIndexChanged);
             // 
             // lbTeamSpelers
             // 
             this.lbTeamSpelers.FormattingEnabled = true;
-            this.lbTeamSpelers.ItemHeight = 16;
-            this.lbTeamSpelers.Location = new System.Drawing.Point(6, 128);
+            this.lbTeamSpelers.Location = new System.Drawing.Point(4, 104);
+            this.lbTeamSpelers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbTeamSpelers.Name = "lbTeamSpelers";
-            this.lbTeamSpelers.Size = new System.Drawing.Size(279, 180);
+            this.lbTeamSpelers.Size = new System.Drawing.Size(210, 147);
             this.lbTeamSpelers.TabIndex = 1;
             // 
             // groupBox1
@@ -93,18 +95,21 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lbTeamSpelers);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(9, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(291, 403);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(218, 327);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Teams";
             // 
             // btnRemoveTeam
             // 
-            this.btnRemoveTeam.Location = new System.Drawing.Point(79, 370);
+            this.btnRemoveTeam.Location = new System.Drawing.Point(59, 301);
+            this.btnRemoveTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveTeam.Name = "btnRemoveTeam";
-            this.btnRemoveTeam.Size = new System.Drawing.Size(100, 27);
+            this.btnRemoveTeam.Size = new System.Drawing.Size(75, 22);
             this.btnRemoveTeam.TabIndex = 10;
             this.btnRemoveTeam.Text = "Verwijder";
             this.btnRemoveTeam.UseVisualStyleBackColor = true;
@@ -112,16 +117,18 @@
             // 
             // tbNewTeamClub
             // 
-            this.tbNewTeamClub.Location = new System.Drawing.Point(185, 342);
+            this.tbNewTeamClub.Location = new System.Drawing.Point(139, 278);
+            this.tbNewTeamClub.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbNewTeamClub.Name = "tbNewTeamClub";
-            this.tbNewTeamClub.Size = new System.Drawing.Size(100, 22);
+            this.tbNewTeamClub.Size = new System.Drawing.Size(76, 20);
             this.tbNewTeamClub.TabIndex = 14;
             // 
             // btnAddNewTeam
             // 
-            this.btnAddNewTeam.Location = new System.Drawing.Point(185, 370);
+            this.btnAddNewTeam.Location = new System.Drawing.Point(139, 301);
+            this.btnAddNewTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddNewTeam.Name = "btnAddNewTeam";
-            this.btnAddNewTeam.Size = new System.Drawing.Size(100, 27);
+            this.btnAddNewTeam.Size = new System.Drawing.Size(75, 22);
             this.btnAddNewTeam.TabIndex = 13;
             this.btnAddNewTeam.Text = "Voeg Toe";
             this.btnAddNewTeam.UseVisualStyleBackColor = true;
@@ -130,49 +137,55 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 108);
+            this.label1.Location = new System.Drawing.Point(4, 88);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 17);
+            this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Spelers In Het Team";
             // 
             // tbNewTeamName
             // 
-            this.tbNewTeamName.Location = new System.Drawing.Point(185, 314);
+            this.tbNewTeamName.Location = new System.Drawing.Point(139, 255);
+            this.tbNewTeamName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbNewTeamName.Name = "tbNewTeamName";
-            this.tbNewTeamName.Size = new System.Drawing.Size(100, 22);
+            this.tbNewTeamName.Size = new System.Drawing.Size(76, 20);
             this.tbNewTeamName.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 345);
+            this.label4.Location = new System.Drawing.Point(4, 280);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "Club:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 317);
+            this.label5.Location = new System.Drawing.Point(4, 258);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 17);
+            this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Naam:";
             // 
             // lbPlayers
             // 
             this.lbPlayers.FormattingEnabled = true;
-            this.lbPlayers.ItemHeight = 16;
-            this.lbPlayers.Location = new System.Drawing.Point(6, 21);
+            this.lbPlayers.Location = new System.Drawing.Point(4, 17);
+            this.lbPlayers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbPlayers.Name = "lbPlayers";
-            this.lbPlayers.Size = new System.Drawing.Size(279, 228);
+            this.lbPlayers.Size = new System.Drawing.Size(210, 186);
             this.lbPlayers.TabIndex = 3;
             this.lbPlayers.SelectedIndexChanged += new System.EventHandler(this.lbPlayers_SelectedIndexChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rbBasketball);
+            this.groupBox2.Controls.Add(this.rbHandball);
             this.groupBox2.Controls.Add(this.lbPercentage);
             this.groupBox2.Controls.Add(this.lbShotsOnTarget);
             this.groupBox2.Controls.Add(this.lblGoals);
@@ -188,9 +201,11 @@
             this.groupBox2.Controls.Add(this.btnAssignToTeam);
             this.groupBox2.Controls.Add(this.lbPlayers);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(309, 12);
+            this.groupBox2.Location = new System.Drawing.Point(232, 10);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(588, 403);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(441, 327);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Spelers";
@@ -198,59 +213,66 @@
             // lbPercentage
             // 
             this.lbPercentage.AutoSize = true;
-            this.lbPercentage.Location = new System.Drawing.Point(425, 56);
+            this.lbPercentage.Location = new System.Drawing.Point(319, 46);
+            this.lbPercentage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPercentage.Name = "lbPercentage";
-            this.lbPercentage.Size = new System.Drawing.Size(0, 17);
+            this.lbPercentage.Size = new System.Drawing.Size(0, 13);
             this.lbPercentage.TabIndex = 16;
             // 
             // lbShotsOnTarget
             // 
             this.lbShotsOnTarget.AutoSize = true;
-            this.lbShotsOnTarget.Location = new System.Drawing.Point(425, 39);
+            this.lbShotsOnTarget.Location = new System.Drawing.Point(319, 32);
+            this.lbShotsOnTarget.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShotsOnTarget.Name = "lbShotsOnTarget";
-            this.lbShotsOnTarget.Size = new System.Drawing.Size(0, 17);
+            this.lbShotsOnTarget.Size = new System.Drawing.Size(0, 13);
             this.lbShotsOnTarget.TabIndex = 15;
             // 
             // lblGoals
             // 
             this.lblGoals.AutoSize = true;
-            this.lblGoals.Location = new System.Drawing.Point(425, 22);
+            this.lblGoals.Location = new System.Drawing.Point(319, 18);
+            this.lblGoals.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGoals.Name = "lblGoals";
-            this.lblGoals.Size = new System.Drawing.Size(0, 17);
+            this.lblGoals.Size = new System.Drawing.Size(0, 13);
             this.lblGoals.TabIndex = 14;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(291, 39);
+            this.label8.Location = new System.Drawing.Point(218, 32);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 17);
+            this.label8.Size = new System.Drawing.Size(88, 13);
             this.label8.TabIndex = 13;
             this.label8.Text = "Schoten op doel:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(291, 22);
+            this.label7.Location = new System.Drawing.Point(218, 18);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Goals:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(291, 56);
+            this.label6.Location = new System.Drawing.Point(218, 46);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 17);
+            this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Goal Percentage:";
             // 
             // nUDAddPlayer
             // 
-            this.nUDAddPlayer.Location = new System.Drawing.Point(185, 342);
+            this.nUDAddPlayer.Location = new System.Drawing.Point(139, 278);
+            this.nUDAddPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nUDAddPlayer.Name = "nUDAddPlayer";
-            this.nUDAddPlayer.Size = new System.Drawing.Size(100, 22);
+            this.nUDAddPlayer.Size = new System.Drawing.Size(75, 20);
             this.nUDAddPlayer.TabIndex = 10;
             this.nUDAddPlayer.Value = new decimal(new int[] {
             1,
@@ -260,9 +282,10 @@
             // 
             // btnRemovePlayer
             // 
-            this.btnRemovePlayer.Location = new System.Drawing.Point(79, 370);
+            this.btnRemovePlayer.Location = new System.Drawing.Point(59, 301);
+            this.btnRemovePlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemovePlayer.Name = "btnRemovePlayer";
-            this.btnRemovePlayer.Size = new System.Drawing.Size(100, 27);
+            this.btnRemovePlayer.Size = new System.Drawing.Size(75, 22);
             this.btnRemovePlayer.TabIndex = 9;
             this.btnRemovePlayer.Text = "Verwijder";
             this.btnRemovePlayer.UseVisualStyleBackColor = true;
@@ -270,9 +293,10 @@
             // 
             // btnAddNewPlayer
             // 
-            this.btnAddNewPlayer.Location = new System.Drawing.Point(185, 370);
+            this.btnAddNewPlayer.Location = new System.Drawing.Point(139, 301);
+            this.btnAddNewPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddNewPlayer.Name = "btnAddNewPlayer";
-            this.btnAddNewPlayer.Size = new System.Drawing.Size(100, 27);
+            this.btnAddNewPlayer.Size = new System.Drawing.Size(75, 22);
             this.btnAddNewPlayer.TabIndex = 8;
             this.btnAddNewPlayer.Text = "Voeg Toe";
             this.btnAddNewPlayer.UseVisualStyleBackColor = true;
@@ -280,9 +304,10 @@
             // 
             // btnRemoveFromTeam
             // 
-            this.btnRemoveFromTeam.Location = new System.Drawing.Point(147, 262);
+            this.btnRemoveFromTeam.Location = new System.Drawing.Point(110, 213);
+            this.btnRemoveFromTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveFromTeam.Name = "btnRemoveFromTeam";
-            this.btnRemoveFromTeam.Size = new System.Drawing.Size(138, 46);
+            this.btnRemoveFromTeam.Size = new System.Drawing.Size(104, 37);
             this.btnRemoveFromTeam.TabIndex = 5;
             this.btnRemoveFromTeam.Text = "Verwijder Uit Team";
             this.btnRemoveFromTeam.UseVisualStyleBackColor = true;
@@ -290,25 +315,28 @@
             // 
             // tbNewPlayerName
             // 
-            this.tbNewPlayerName.Location = new System.Drawing.Point(185, 314);
+            this.tbNewPlayerName.Location = new System.Drawing.Point(139, 255);
+            this.tbNewPlayerName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbNewPlayerName.Name = "tbNewPlayerName";
-            this.tbNewPlayerName.Size = new System.Drawing.Size(100, 22);
+            this.tbNewPlayerName.Size = new System.Drawing.Size(76, 20);
             this.tbNewPlayerName.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 345);
+            this.label3.Location = new System.Drawing.Point(4, 280);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Nummer:";
             // 
             // btnAssignToTeam
             // 
-            this.btnAssignToTeam.Location = new System.Drawing.Point(6, 262);
+            this.btnAssignToTeam.Location = new System.Drawing.Point(4, 213);
+            this.btnAssignToTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAssignToTeam.Name = "btnAssignToTeam";
-            this.btnAssignToTeam.Size = new System.Drawing.Size(135, 46);
+            this.btnAssignToTeam.Size = new System.Drawing.Size(101, 37);
             this.btnAssignToTeam.TabIndex = 4;
             this.btnAssignToTeam.Text = "Voeg Toe Aan Team";
             this.btnAssignToTeam.UseVisualStyleBackColor = true;
@@ -317,17 +345,19 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 317);
+            this.label2.Location = new System.Drawing.Point(4, 258);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Naam:";
             // 
             // btnSafeToFile
             // 
-            this.btnSafeToFile.Location = new System.Drawing.Point(12, 421);
+            this.btnSafeToFile.Location = new System.Drawing.Point(9, 342);
+            this.btnSafeToFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSafeToFile.Name = "btnSafeToFile";
-            this.btnSafeToFile.Size = new System.Drawing.Size(75, 23);
+            this.btnSafeToFile.Size = new System.Drawing.Size(56, 19);
             this.btnSafeToFile.TabIndex = 5;
             this.btnSafeToFile.Text = "Safe";
             this.btnSafeToFile.UseVisualStyleBackColor = true;
@@ -335,9 +365,10 @@
             // 
             // btnLoadFromFile
             // 
-            this.btnLoadFromFile.Location = new System.Drawing.Point(93, 421);
+            this.btnLoadFromFile.Location = new System.Drawing.Point(70, 342);
+            this.btnLoadFromFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLoadFromFile.Name = "btnLoadFromFile";
-            this.btnLoadFromFile.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadFromFile.Size = new System.Drawing.Size(56, 19);
             this.btnLoadFromFile.TabIndex = 6;
             this.btnLoadFromFile.Text = "Load";
             this.btnLoadFromFile.UseVisualStyleBackColor = true;
@@ -347,15 +378,40 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // rbHandball
+            // 
+            this.rbHandball.AutoSize = true;
+            this.rbHandball.Location = new System.Drawing.Point(221, 88);
+            this.rbHandball.Name = "rbHandball";
+            this.rbHandball.Size = new System.Drawing.Size(67, 17);
+            this.rbHandball.TabIndex = 17;
+            this.rbHandball.TabStop = true;
+            this.rbHandball.Text = "Handball";
+            this.rbHandball.UseVisualStyleBackColor = true;
+            this.rbHandball.CheckedChanged += new System.EventHandler(this.rbHandball_CheckedChanged);
+            // 
+            // rbBasketball
+            // 
+            this.rbBasketball.AutoSize = true;
+            this.rbBasketball.Location = new System.Drawing.Point(221, 111);
+            this.rbBasketball.Name = "rbBasketball";
+            this.rbBasketball.Size = new System.Drawing.Size(74, 17);
+            this.rbBasketball.TabIndex = 18;
+            this.rbBasketball.TabStop = true;
+            this.rbBasketball.Text = "Basketball";
+            this.rbBasketball.UseVisualStyleBackColor = true;
+            this.rbBasketball.CheckedChanged += new System.EventHandler(this.rbBasketball_CheckedChanged);
+            // 
             // SportStatisticsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 454);
+            this.ClientSize = new System.Drawing.Size(692, 369);
             this.Controls.Add(this.btnLoadFromFile);
             this.Controls.Add(this.btnSafeToFile);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SportStatisticsForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.SportStatisticsForm_Load);
@@ -400,6 +456,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton rbBasketball;
+        private System.Windows.Forms.RadioButton rbHandball;
     }
 }
 

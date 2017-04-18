@@ -22,25 +22,25 @@ namespace Sport_Statistics
         private void SportStatisticsForm_Load(object sender, EventArgs e)
         {
             administratie = new Administration();
-            Player player = new Player("Dummy1", 32);
+            Player player = new Player("Dummy1", 32, new Basketball(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
             administratie.AddPlayer(player);
-            player = new Player("Dummy2", 4);
+            player = new Player("Dummy2", 4, new Handball(0,0,0,0,0,0,0));
             administratie.AddPlayer(player);
-            player = new Player("Dummy3", 99);
+            player = new Player("Dummy3", 99, new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             administratie.AddPlayer(player);
-            player = new Player("Dummy4", 12);
+            player = new Player("Dummy4", 12, new Handball(0, 0, 0, 0, 0, 0, 0));
             administratie.AddPlayer(player);
-            player = new Player("Dummy5", 6);
+            player = new Player("Dummy5", 6, new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             administratie.AddPlayer(player);
-            Team team = new Team("Team1", "Club A");
+            Team team = new Team("Team1", "Club A", new Handball(0, 0, 0, 0, 0, 0, 0));
             administratie.AddTeam(team);
-            team = new Team("Team2", "Club B");
+            team = new Team("Team2", "Club B", new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             administratie.AddTeam(team);
-            team = new Team("Team3", "Club C");
+            team = new Team("Team3", "Club C", new Handball(0, 0, 0, 0, 0, 0, 0));
             administratie.AddTeam(team);
-            team = new Team("Team4", "Club D");
+            team = new Team("Team4", "Club D", new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             administratie.AddTeam(team);
-            team = new Team("Team5", "Club E");
+            team = new Team("Team5", "Club E", new Handball(0, 0, 0, 0, 0, 0, 0));
             administratie.AddTeam(team);
             foreach(Player players in administratie.Players)
             {
@@ -102,7 +102,7 @@ namespace Sport_Statistics
         {
             if(tbNewTeamName.Text != "" || tbNewTeamClub.Text != "")
             {
-                Team team = new Team(tbNewTeamName.Text, tbNewTeamClub.Text);
+                Team team = new Team(tbNewTeamName.Text, tbNewTeamClub.Text,);
                 if (administratie.AddTeam(team))
                 {
                     MessageBox.Show("Team: " + team.ToString() + " Is Succesvol Toegevoegd");
@@ -238,4 +238,27 @@ namespace Sport_Statistics
             }
         }
 
-}
+        private void rbHandball_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbHandball.Checked)
+            {
+                Sport handball = new Handball(0, 0, 0, 0, 0, 0, 0);
+            }
+            else if(rbBasketball.Checked == false && rbHandball.Checked == false)
+            {
+                MessageBox.Show("Please select a sport");
+            }
+        }
+
+        private void rbBasketball_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbBasketball.Checked)
+            {
+                Sport basketball = new Basketball(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+            }
+            else if (rbBasketball.Checked == false && rbHandball.Checked == false)
+            {
+                MessageBox.Show("Please select a sport");
+            }
+        }
+    }

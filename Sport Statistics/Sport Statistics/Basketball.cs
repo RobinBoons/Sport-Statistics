@@ -21,7 +21,11 @@ namespace Sport_Statistics
         public decimal ThreePointersMade { get; private set; }
         public decimal ThreePointersPercentage { get; private set; }
 
-        public Basketball(decimal score, decimal fieldGoalAttempts, decimal fieldGoalPercentage, decimal freeThrowMade, decimal freeThrowAttempts, decimal freeThrowPercentage, decimal rebounds, decimal turnOvers, decimal fouls, decimal teamFouls, decimal steals, decimal assists, decimal threePointersMade, decimal threePointersAttempted, decimal threePointersPercentage):base(score, fieldGoalAttempts, fieldGoalPercentage)
+        public Basketball(decimal score, decimal fieldGoalAttempts, decimal fieldGoalPercentage, decimal freeThrowMade, 
+                            decimal freeThrowAttempts, decimal freeThrowPercentage, decimal rebounds, decimal turnOvers, 
+                            decimal fouls, decimal teamFouls, decimal steals, decimal assists, decimal threePointersMade, 
+                            decimal threePointersAttempted, decimal threePointersPercentage)
+                            :base(score, fieldGoalAttempts, fieldGoalPercentage)
         {
             if (freeThrowMade < 0)
             {
@@ -86,7 +90,7 @@ namespace Sport_Statistics
             ThreePointersPercentage = threePointersPercentage;
         }
 
-        public decimal CalculatePercentage(decimal made, decimal attempts)
+        public decimal CalculateNewPercentage(decimal made, decimal attempts)
         {
             decimal percentage = made / attempts;
             return percentage;
