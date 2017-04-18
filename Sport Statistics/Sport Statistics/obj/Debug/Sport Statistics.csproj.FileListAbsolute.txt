@@ -1,1 +1,10 @@
 C:\Users\Boons\Documents\GitHub\Sport-Statistics\Sport Statistics\Sport Statistics\bin\Debug\Sport Statistics.exe.config
+D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport Statistics.csprojResolveAssemblyReference.cache
+D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport_Statistics.Properties.Resources.resources
+D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport_Statistics.SportStatisticsForm.resources
+D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport Statistics.csproj.GenerateResource.Cache
+D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\bin\Debug\Sport Statistics.exe.config
+D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\bin\Debug\Sport Statistics.exe
+D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\bin\Debug\Sport Statistics.pdb
+D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport Statistics.exe
+D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport Statistics.pdb

@@ -46,9 +46,8 @@ namespace Sport_Statistics
             }
         }
 
-        public bool RemovePlayer(string name)
+        public bool RemovePlayer(Player player)
         {
-            Player player = FindPlayer(name);
             if(player != null)
             {
                 Players.Remove(player);
@@ -60,9 +59,8 @@ namespace Sport_Statistics
             }
         }
 
-        public bool RemoveTeam(string name)
+        public bool RemoveTeam(Team team)
         {
-            Team team = FindTeam(name);
             if (team != null)
             {
                 Teams.Remove(team);
@@ -149,7 +147,7 @@ namespace Sport_Statistics
             return false;
         }
 
-        public bool AddPlayerToTeam(Team team, Player player)
+      /*  public bool AddPlayerToTeam(Team team, Player player)
         {
             team.TeamPlayers.Add(player);
         }
@@ -157,6 +155,6 @@ namespace Sport_Statistics
         public bool RemovePlayerFromTeam(Team team, Player player)
         {
             team.TeamPlayers.Remove(player);
-        }
+        }*/
     }
 }
