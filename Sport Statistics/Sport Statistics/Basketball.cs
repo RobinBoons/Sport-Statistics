@@ -17,7 +17,7 @@ namespace Sport_Statistics
         public decimal TeamFouls { get; private set; }
         public decimal Steals { get; private set; }
         public decimal Assists { get; private set; }
-        public decimal ThreePointeresAttempted { get; private set; }
+        public decimal ThreePointersAttempted { get; private set; }
         public decimal ThreePointersMade { get; private set; }
         public decimal ThreePointersPercentage { get; private set; }
 
@@ -82,12 +82,15 @@ namespace Sport_Statistics
             Steals = steals;
             Assists = assists;
             ThreePointersMade = threePointersMade;
-            ThreePointeresAttempted = threePointersAttempted;
+            ThreePointersAttempted = threePointersAttempted;
             ThreePointersPercentage = threePointersPercentage;
         }
 
-        public void CalculatePercentage()
+        public decimal CalculatePercentage(decimal made, decimal attempts)
         {
+            decimal percentage = made / attempts;
+            return percentage;
+           
 
         }
 
@@ -95,10 +98,10 @@ namespace Sport_Statistics
         {
             return base.ToString() + "%, " + FreeThrowAttempts
                                    + ", " + FreeThrowMade
-                                   + ", " + FreeThrowPercentage
-                                   + "%, " + ThreePointeresAttempted
+                                   + ", " + CalculatePercentage(FreeThrowMade, FreeThrowAttempts)
+                                   + "%, " + ThreePointersAttempted
                                    + ", " + ThreePointersMade
-                                   + ", " + ThreePointersPercentage
+                                   + ", " + CalculatePercentage(ThreePointersMade, ThreePointersAttempted)
                                    + "%, " + Rebounds
                                    + ", " + TurnOvers
                                    + ", " + Fouls

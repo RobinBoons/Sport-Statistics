@@ -32,9 +32,10 @@ namespace Sport_Statistics
             ScorePercentage = scorePercentage;
         }
 
-        public void CalculatePercentage()
+        public decimal CalculatePercentage(decimal score, decimal attempts)
         {
-
+            ScorePercentage = score / attempts;
+            return ScorePercentage;
         }
 
         public override string ToString()
