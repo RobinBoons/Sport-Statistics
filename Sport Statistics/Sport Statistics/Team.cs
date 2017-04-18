@@ -31,7 +31,7 @@ namespace Sport_Statistics
 
         public override string ToString()
         {
-            return base.ToString() + ", " + Name + ", " + Club + ", " + TeamPlayers;
+            return Name + ", " + Club + ", " + TeamPlayers;
         }
     }
 }
