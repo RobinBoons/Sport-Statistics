@@ -8,3 +8,5 @@ D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Spo
 D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\bin\Debug\Sport Statistics.pdb
 D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport Statistics.exe
 D:\OneDrive\OneDrive - Office 365 Fontys\Maatwerk S2\Maatwerk Project\Github\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport Statistics.pdb
+C:\Users\Boons\Documents\GitHub\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport Statistics.exe
+C:\Users\Boons\Documents\GitHub\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport Statistics.pdb

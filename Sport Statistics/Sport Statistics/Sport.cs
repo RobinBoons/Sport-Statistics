@@ -39,7 +39,7 @@ namespace Sport_Statistics
 
         public override string ToString()
         {
-            return base.ToString();
+            return Score + ", " + Attempts + ", " + ScorePercentage;
         }
     }
 }

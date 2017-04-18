@@ -93,7 +93,18 @@ namespace Sport_Statistics
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + "%, " + FreeThrowAttempts
+                                   + ", " + FreeThrowMade
+                                   + ", " + FreeThrowPercentage
+                                   + "%, " + ThreePointeresAttempted
+                                   + ", " + ThreePointersMade
+                                   + ", " + ThreePointersPercentage
+                                   + "%, " + Rebounds
+                                   + ", " + TurnOvers
+                                   + ", " + Fouls
+                                   + ", " + TeamFouls
+                                   + ", " + Steals
+                                   + ", " + Assists;
         }
     }
 }

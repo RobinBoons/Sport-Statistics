@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sport_Statistics
 {
+    [Serializable]
     public class Player
     {
         public string Name { get; private set; }
@@ -30,7 +31,7 @@ namespace Sport_Statistics
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + ", " + Name + ", " + Number;
         }
     }
 }
