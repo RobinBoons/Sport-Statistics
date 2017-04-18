@@ -38,11 +38,6 @@ namespace Sport_Statistics
             Breakouts = breakouts;
         }
 
-        public void CalculatePercentage()
-        {
-
-        }
-
         public override string ToString()
         {
             return base.ToString() + "%, " + TimePenaltys
