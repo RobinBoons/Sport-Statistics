@@ -226,5 +226,16 @@ namespace Sport_Statistics
                 }
             }
         }
-    }
+
+        private void lbPlayers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Player player = (Player)lbPlayers.SelectedItem;
+            if(player != null)
+            {
+                lblGoals.Text = player.Sport.Score.ToString();
+                lbPercentage.Text = player.Sport.ScorePercentage.ToString();
+                lbShotsOnTarget.Text = player.Sport.Attempts.ToString();    
+            }
+        }
+
 }

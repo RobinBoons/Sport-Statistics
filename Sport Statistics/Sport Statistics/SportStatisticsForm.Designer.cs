@@ -40,6 +40,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbPercentage = new System.Windows.Forms.Label();
+            this.lbShotsOnTarget = new System.Windows.Forms.Label();
+            this.lblGoals = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nUDAddPlayer = new System.Windows.Forms.NumericUpDown();
             this.btnRemovePlayer = new System.Windows.Forms.Button();
             this.btnAddNewPlayer = new System.Windows.Forms.Button();
             this.btnRemoveFromTeam = new System.Windows.Forms.Button();
@@ -51,7 +58,6 @@
             this.btnLoadFromFile = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.nUDAddPlayer = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDAddPlayer)).BeginInit();
@@ -126,9 +132,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 108);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.Size = new System.Drawing.Size(137, 17);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Spelers";
+            this.label1.Text = "Spelers In Het Team";
             // 
             // tbNewTeamName
             // 
@@ -163,9 +169,16 @@
             this.lbPlayers.Name = "lbPlayers";
             this.lbPlayers.Size = new System.Drawing.Size(279, 228);
             this.lbPlayers.TabIndex = 3;
+            this.lbPlayers.SelectedIndexChanged += new System.EventHandler(this.lbPlayers_SelectedIndexChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lbPercentage);
+            this.groupBox2.Controls.Add(this.lbShotsOnTarget);
+            this.groupBox2.Controls.Add(this.lblGoals);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.nUDAddPlayer);
             this.groupBox2.Controls.Add(this.btnRemovePlayer);
             this.groupBox2.Controls.Add(this.btnAddNewPlayer);
@@ -177,10 +190,73 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(309, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(294, 403);
+            this.groupBox2.Size = new System.Drawing.Size(588, 403);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Spelers";
+            // 
+            // lbPercentage
+            // 
+            this.lbPercentage.AutoSize = true;
+            this.lbPercentage.Location = new System.Drawing.Point(425, 56);
+            this.lbPercentage.Name = "lbPercentage";
+            this.lbPercentage.Size = new System.Drawing.Size(0, 17);
+            this.lbPercentage.TabIndex = 16;
+            // 
+            // lbShotsOnTarget
+            // 
+            this.lbShotsOnTarget.AutoSize = true;
+            this.lbShotsOnTarget.Location = new System.Drawing.Point(425, 39);
+            this.lbShotsOnTarget.Name = "lbShotsOnTarget";
+            this.lbShotsOnTarget.Size = new System.Drawing.Size(0, 17);
+            this.lbShotsOnTarget.TabIndex = 15;
+            // 
+            // lblGoals
+            // 
+            this.lblGoals.AutoSize = true;
+            this.lblGoals.Location = new System.Drawing.Point(425, 22);
+            this.lblGoals.Name = "lblGoals";
+            this.lblGoals.Size = new System.Drawing.Size(0, 17);
+            this.lblGoals.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(291, 39);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(115, 17);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Schoten op doel:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(291, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Goals:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(291, 56);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 17);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Goal Percentage:";
+            // 
+            // nUDAddPlayer
+            // 
+            this.nUDAddPlayer.Location = new System.Drawing.Point(185, 342);
+            this.nUDAddPlayer.Name = "nUDAddPlayer";
+            this.nUDAddPlayer.Size = new System.Drawing.Size(100, 22);
+            this.nUDAddPlayer.TabIndex = 10;
+            this.nUDAddPlayer.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnRemovePlayer
             // 
@@ -271,23 +347,11 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // nUDAddPlayer
-            // 
-            this.nUDAddPlayer.Location = new System.Drawing.Point(185, 342);
-            this.nUDAddPlayer.Name = "nUDAddPlayer";
-            this.nUDAddPlayer.Size = new System.Drawing.Size(100, 22);
-            this.nUDAddPlayer.TabIndex = 10;
-            this.nUDAddPlayer.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // SportStatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 454);
+            this.ClientSize = new System.Drawing.Size(922, 454);
             this.Controls.Add(this.btnLoadFromFile);
             this.Controls.Add(this.btnSafeToFile);
             this.Controls.Add(this.groupBox2);
@@ -330,6 +394,12 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.NumericUpDown nUDAddPlayer;
+        private System.Windows.Forms.Label lbPercentage;
+        private System.Windows.Forms.Label lbShotsOnTarget;
+        private System.Windows.Forms.Label lblGoals;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
 
