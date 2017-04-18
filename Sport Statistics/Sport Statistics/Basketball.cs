@@ -92,8 +92,12 @@ namespace Sport_Statistics
 
         public decimal CalculateNewPercentage(decimal made, decimal attempts)
         {
+            if (made <= 0 || attempts < made || attempts <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             decimal percentage = made / attempts;
-            return percentage;
+            return percentage * 100;
            
 
         }

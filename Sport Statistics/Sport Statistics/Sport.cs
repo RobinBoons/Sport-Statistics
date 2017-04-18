@@ -34,8 +34,12 @@ namespace Sport_Statistics
 
         public decimal CalculatePercentage(decimal score, decimal attempts)
         {
+            if(score <= 0 || attempts < score || attempts <= 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
             ScorePercentage = score / attempts;
-            return ScorePercentage;
+            return ScorePercentage * 100;
         }
 
         public override string ToString()

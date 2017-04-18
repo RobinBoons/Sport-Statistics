@@ -14,3 +14,5 @@ C:\Users\Boons\Documents\GitHub\Sport-Statistics\Sport Statistics\Sport Statisti
 C:\Users\Boons\Documents\GitHub\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport_Statistics.Properties.Resources.resources
 C:\Users\Boons\Documents\GitHub\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport_Statistics.SportStatisticsForm.resources
 C:\Users\Boons\Documents\GitHub\Sport-Statistics\Sport Statistics\Sport Statistics\obj\Debug\Sport Statistics.csproj.GenerateResource.Cache
+C:\Users\Boons\Documents\GitHub\Sport-Statistics\Sport Statistics\Sport Statistics\bin\Debug\Sport Statistics.exe
+C:\Users\Boons\Documents\GitHub\Sport-Statistics\Sport Statistics\Sport Statistics\bin\Debug\Sport Statistics.pdb

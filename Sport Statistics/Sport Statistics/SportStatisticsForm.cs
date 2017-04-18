@@ -22,25 +22,25 @@ namespace Sport_Statistics
         private void SportStatisticsForm_Load(object sender, EventArgs e)
         {
             administratie = new Administration();
-            Player player = new Player("Dummy1", 32, new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+            Player player = new Player("Dummy1", 32, new Basketball(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1));
             administratie.AddPlayer(player);
-            player = new Player("Dummy2", 4, new Handball(0, 0, 0, 0, 0, 0, 0));
+            player = new Player("Dummy2", 4, new Handball(1,1,1,1,1,1,1));
             administratie.AddPlayer(player);
-            player = new Player("Dummy3", 99, new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+            player = new Player("Dummy3", 99, new Basketball(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
             administratie.AddPlayer(player);
-            player = new Player("Dummy4", 12, new Handball(0, 0, 0, 0, 0, 0, 0));
+            player = new Player("Dummy4", 12, new Handball(1, 1, 1, 1, 1, 1, 1));
             administratie.AddPlayer(player);
-            player = new Player("Dummy5", 6, new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+            player = new Player("Dummy5", 6, new Basketball(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
             administratie.AddPlayer(player);
-            Team team = new Team("Team1", "Club A", new Handball(0, 0, 0, 0, 0, 0, 0));
+            Team team = new Team("Team1", "Club A", new Handball(1, 1, 1, 1, 1, 1, 1));
             administratie.AddTeam(team);
-            team = new Team("Team2", "Club B", new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+            team = new Team("Team2", "Club B", new Basketball(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
             administratie.AddTeam(team);
-            team = new Team("Team3", "Club C", new Handball(0, 0, 0, 0, 0, 0, 0));
+            team = new Team("Team3", "Club C", new Handball(1, 1, 1, 1, 1, 1, 1));
             administratie.AddTeam(team);
-            team = new Team("Team4", "Club D", new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+            team = new Team("Team4", "Club D", new Basketball(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1));
             administratie.AddTeam(team);
-            team = new Team("Team5", "Club E", new Handball(0, 0, 0, 0, 0, 0, 0));
+            team = new Team("Team5", "Club E", new Handball(1, 1, 1, 1, 1, 1, 1));
             administratie.AddTeam(team);
             foreach (Player players in administratie.Players)
             {
