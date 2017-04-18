@@ -11,20 +11,20 @@ using System.IO;
 
 namespace Sport_Statistics
 {
-	public partial class SportStatisticsForm : Form
-	{
+    public partial class SportStatisticsForm : Form
+    {
         Administration administratie;
         public SportStatisticsForm()
-		{
-			InitializeComponent();
-		}
+        {
+            InitializeComponent();
+        }
 
         private void SportStatisticsForm_Load(object sender, EventArgs e)
         {
             administratie = new Administration();
-            Player player = new Player("Dummy1", 32, new Basketball(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
+            Player player = new Player("Dummy1", 32, new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             administratie.AddPlayer(player);
-            player = new Player("Dummy2", 4, new Handball(0,0,0,0,0,0,0));
+            player = new Player("Dummy2", 4, new Handball(0, 0, 0, 0, 0, 0, 0));
             administratie.AddPlayer(player);
             player = new Player("Dummy3", 99, new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             administratie.AddPlayer(player);
@@ -42,13 +42,13 @@ namespace Sport_Statistics
             administratie.AddTeam(team);
             team = new Team("Team5", "Club E", new Handball(0, 0, 0, 0, 0, 0, 0));
             administratie.AddTeam(team);
-            foreach(Player players in administratie.Players)
+            foreach (Player players in administratie.Players)
             {
                 lbPlayers.Items.Add(players);
             }
-            foreach(Team teams in administratie.Teams)
+            foreach (Team teams in administratie.Teams)
             {
-               lbTeams.Items.Add(teams);
+                lbTeams.Items.Add(teams);
             }
         }
 
@@ -60,7 +60,7 @@ namespace Sport_Statistics
                 string file = saveFileDialog1.FileName;
                 administratie.SafeToFile(file);
             }
-            catch(IOException exception)
+            catch (IOException exception)
             {
                 MessageBox.Show(exception.Message);
             }
@@ -74,7 +74,7 @@ namespace Sport_Statistics
                 openFileDialog1.ShowDialog();
                 string file = openFileDialog1.FileName;
                 administratie.LoadFromFile(file);
-                if(file.Contains(".team"))
+                if (file.Contains(".team"))
                 {
                     lbTeams.Items.Clear();
                     foreach (Team teams in administratie.Teams)
@@ -82,7 +82,7 @@ namespace Sport_Statistics
                         lbTeams.Items.Add(teams);
                     }
                 }
-                else if(file.Contains(".plyr"))
+                else if (file.Contains(".plyr"))
                 {
                     lbPlayers.Items.Clear();
                     foreach (Player players in administratie.Players)
@@ -91,7 +91,7 @@ namespace Sport_Statistics
                     }
                 }
             }
-            catch(IOException exception)
+            catch (IOException exception)
             {
                 MessageBox.Show(exception.Message);
             }
@@ -100,9 +100,9 @@ namespace Sport_Statistics
 
         private void btnAddNewTeam_Click(object sender, EventArgs e)
         {
-            if(tbNewTeamName.Text != "" || tbNewTeamClub.Text != "")
+            if (tbNewTeamName.Text != "" || tbNewTeamClub.Text != "")
             {
-                Team team = new Team(tbNewTeamName.Text, tbNewTeamClub.Text,);
+                Team team = new Team(tbNewTeamName.Text, tbNewTeamClub.Text, (Sport)cbSport.SelectedItem);
                 if (administratie.AddTeam(team))
                 {
                     MessageBox.Show("Team: " + team.ToString() + " Is Succesvol Toegevoegd");
@@ -121,7 +121,7 @@ namespace Sport_Statistics
 
         private void btnRemoveTeam_Click(object sender, EventArgs e)
         {
-            if(lbTeams.SelectedItem != null)
+            if (lbTeams.SelectedItem != null)
             {
                 if (administratie.RemoveTeam((Team)lbTeams.SelectedItem))
                 {
@@ -143,7 +143,7 @@ namespace Sport_Statistics
         {
             if (tbNewPlayerName.Text != "" || nUDAddPlayer.Value >= 0)
             {
-                Player player = new Player(tbNewPlayerName.Text, (int)nUDAddPlayer.Value);
+                Player player = new Player(tbNewPlayerName.Text, (int)nUDAddPlayer.Value, (Sport)cbSport.SelectedItem);
                 if (administratie.AddPlayer(player))
                 {
                     MessageBox.Show("Speler: " + player.ToString() + " Is Succesvol Toegevoegd");
@@ -184,9 +184,9 @@ namespace Sport_Statistics
         {
             Player player = (Player)lbPlayers.SelectedItem;
             Team team = (Team)lbTeams.SelectedItem;
-            if(player != null || team != null)
+            if (player != null || team != null)
             {
-                if(administratie.AddPlayerToTeam(team, player))
+                if (administratie.AddPlayerToTeam(team, player))
                 {
                     MessageBox.Show(player.ToString() + " Is succesvol aan " + team.ToString());
                 }
@@ -218,9 +218,9 @@ namespace Sport_Statistics
         {
             lbTeamSpelers.Items.Clear();
             Team team = (Team)lbTeams.SelectedItem;
-            if(team != null)
+            if (team != null)
             {
-                foreach(Player player in team.TeamPlayers)
+                foreach (Player player in team.TeamPlayers)
                 {
                     lbTeamSpelers.Items.Add(player);
                 }
@@ -230,35 +230,12 @@ namespace Sport_Statistics
         private void lbPlayers_SelectedIndexChanged(object sender, EventArgs e)
         {
             Player player = (Player)lbPlayers.SelectedItem;
-            if(player != null)
+            if (player != null)
             {
                 lblGoals.Text = player.Sport.Score.ToString();
                 lbPercentage.Text = player.Sport.ScorePercentage.ToString();
-                lbShotsOnTarget.Text = player.Sport.Attempts.ToString();    
-            }
-        }
-
-        private void rbHandball_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbHandball.Checked)
-            {
-                Sport handball = new Handball(0, 0, 0, 0, 0, 0, 0);
-            }
-            else if(rbBasketball.Checked == false && rbHandball.Checked == false)
-            {
-                MessageBox.Show("Please select a sport");
-            }
-        }
-
-        private void rbBasketball_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbBasketball.Checked)
-            {
-                Sport basketball = new Basketball(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-            }
-            else if (rbBasketball.Checked == false && rbHandball.Checked == false)
-            {
-                MessageBox.Show("Please select a sport");
+                lbShotsOnTarget.Text = player.Sport.Attempts.ToString();
             }
         }
     }
+}

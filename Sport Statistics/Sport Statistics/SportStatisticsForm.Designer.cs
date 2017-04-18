@@ -58,8 +58,8 @@
             this.btnLoadFromFile = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.rbHandball = new System.Windows.Forms.RadioButton();
-            this.rbBasketball = new System.Windows.Forms.RadioButton();
+            this.cbSport = new System.Windows.Forms.ComboBox();
+            this.lblSport = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDAddPlayer)).BeginInit();
@@ -184,8 +184,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rbBasketball);
-            this.groupBox2.Controls.Add(this.rbHandball);
+            this.groupBox2.Controls.Add(this.lblSport);
+            this.groupBox2.Controls.Add(this.cbSport);
             this.groupBox2.Controls.Add(this.lbPercentage);
             this.groupBox2.Controls.Add(this.lbShotsOnTarget);
             this.groupBox2.Controls.Add(this.lblGoals);
@@ -378,29 +378,26 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // rbHandball
+            // cbSport
             // 
-            this.rbHandball.AutoSize = true;
-            this.rbHandball.Location = new System.Drawing.Point(221, 88);
-            this.rbHandball.Name = "rbHandball";
-            this.rbHandball.Size = new System.Drawing.Size(67, 17);
-            this.rbHandball.TabIndex = 17;
-            this.rbHandball.TabStop = true;
-            this.rbHandball.Text = "Handball";
-            this.rbHandball.UseVisualStyleBackColor = true;
-            this.rbHandball.CheckedChanged += new System.EventHandler(this.rbHandball_CheckedChanged);
+            this.cbSport.FormattingEnabled = true;
+            this.cbSport.Items.AddRange(new object[] {
+            "Basketball",
+            "Handball"});
+            this.cbSport.Location = new System.Drawing.Point(221, 104);
+            this.cbSport.Name = "cbSport";
+            this.cbSport.Size = new System.Drawing.Size(121, 21);
+            this.cbSport.TabIndex = 19;
             // 
-            // rbBasketball
+            // lblSport
             // 
-            this.rbBasketball.AutoSize = true;
-            this.rbBasketball.Location = new System.Drawing.Point(221, 111);
-            this.rbBasketball.Name = "rbBasketball";
-            this.rbBasketball.Size = new System.Drawing.Size(74, 17);
-            this.rbBasketball.TabIndex = 18;
-            this.rbBasketball.TabStop = true;
-            this.rbBasketball.Text = "Basketball";
-            this.rbBasketball.UseVisualStyleBackColor = true;
-            this.rbBasketball.CheckedChanged += new System.EventHandler(this.rbBasketball_CheckedChanged);
+            this.lblSport.AutoSize = true;
+            this.lblSport.Location = new System.Drawing.Point(218, 88);
+            this.lblSport.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSport.Name = "lblSport";
+            this.lblSport.Size = new System.Drawing.Size(35, 13);
+            this.lblSport.TabIndex = 20;
+            this.lblSport.Text = "Sport:";
             // 
             // SportStatisticsForm
             // 
@@ -456,8 +453,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton rbBasketball;
-        private System.Windows.Forms.RadioButton rbHandball;
+        private System.Windows.Forms.Label lblSport;
+        private System.Windows.Forms.ComboBox cbSport;
     }
 }
 
