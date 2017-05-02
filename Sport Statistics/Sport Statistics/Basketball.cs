@@ -104,7 +104,7 @@ namespace Sport_Statistics
 
         public override string ToString()
         {
-            return base.ToString() + "%, " + FreeThrowAttempts
+            return "%, " + FreeThrowAttempts
                                    + ", " + FreeThrowMade
                                    + ", " + CalculatePercentage(FreeThrowMade, FreeThrowAttempts)
                                    + "%, " + ThreePointersAttempted

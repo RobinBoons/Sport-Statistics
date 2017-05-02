@@ -141,23 +141,40 @@ namespace Sport_Statistics
 
         private void btnAddNewPlayer_Click(object sender, EventArgs e)
         {
-            if (tbNewPlayerName.Text != "" || nUDAddPlayer.Value >= 0)
+            if (tbNewPlayerName.Text != "" || nUDAddPlayer.Value >= 0 || cbSport.ToString() != "")
             {
-                Player player = new Player(tbNewPlayerName.Text, (int)nUDAddPlayer.Value, (Sport)cbSport.SelectedItem);
-                if (administratie.AddPlayer(player))
+                try
                 {
-                    MessageBox.Show("Speler: " + player.ToString() + " Is Succesvol Toegevoegd");
-                    lbPlayers.Items.Clear();
-                    foreach (Player players in administratie.Players)
+                    Sport sport = null;
+                    if(cbSport.Text == "Handball")
                     {
-                        lbPlayers.Items.Add(players);
+                        sport = new Handball(0, 0, 0, 0, 0, 0, 0);
+                    }
+                    else if(cbSport.Text == "Basketball")
+                    {
+                        sport = new Basketball(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                    }
+                    Player player = new Player(tbNewPlayerName.Text, (int)nUDAddPlayer.Value, sport);//TODO onmogelijk cast
+                    if (administratie.AddPlayer(player))
+                    {
+                        MessageBox.Show("Speler: " + player.ToString() + " Is Succesvol Toegevoegd");
+                        lbPlayers.Items.Clear();
+                        foreach (Player players in administratie.Players)
+                        {
+                            lbPlayers.Items.Add(players);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Speler: " + player.ToString() + " Is Niet Toegevoegd");
                     }
                 }
-                else
+                catch (ArgumentNullException ex)
                 {
-                    MessageBox.Show("Speler: " + player.ToString() + " Is Niet Toegevoegd");
+                    MessageBox.Show(ex.Message);
                 }
             }
+            
         }
 
         private void btnRemovePlayer_Click(object sender, EventArgs e)
@@ -237,5 +254,6 @@ namespace Sport_Statistics
                 lbShotsOnTarget.Text = player.Sport.Attempts.ToString();
             }
         }
+
     }
 }

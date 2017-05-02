@@ -38,7 +38,7 @@ namespace Sport_Statistics
 
         public override string ToString()
         {
-            return Name + ", " + Number + ", " + Sport;
+            return Name + ", " + Number;
         }
     }
 }

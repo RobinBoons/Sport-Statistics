@@ -40,7 +40,7 @@ namespace Sport_Statistics
 
         public override string ToString()
         {
-            return base.ToString() + "%, " + TimePenaltys
+            return "%, " + TimePenaltys
                                    + ", " + Yellowcards
                                    + ", " + Exclusions
                                    + ", " + Breakouts;

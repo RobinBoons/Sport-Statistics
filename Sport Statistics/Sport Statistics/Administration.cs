@@ -22,6 +22,10 @@ namespace Sport_Statistics
 
         public bool AddPlayer(Player player)
         {
+            if(player == null)
+            {
+                throw new ArgumentNullException(player.ToString());
+            }
             if (FindPlayer(player.Name) == null)
             {
                 Players.Add(player);
@@ -35,6 +39,10 @@ namespace Sport_Statistics
 
         public bool AddTeam(Team team)
         {
+            if(team == null)
+            {
+                throw new ArgumentNullException(team.ToString());
+            }
             if (FindTeam(team.Name) == null)
             {
                 Teams.Add(team);
@@ -48,7 +56,11 @@ namespace Sport_Statistics
 
         public bool RemovePlayer(Player player)
         {
-            if(player != null)
+            if(player == null)
+            {
+                throw new ArgumentNullException(player.ToString());
+            }
+            if(FindPlayer(player.Name) != null)
             {
                 Players.Remove(player);
                 return true;
@@ -61,8 +73,12 @@ namespace Sport_Statistics
 
         public bool RemoveTeam(Team team)
         {
-            if (team != null)
+            if (team == null)
             {
+                throw new ArgumentNullException(team.ToString());
+            }
+            if(FindTeam(team.Name) != null)
+            { 
                 Teams.Remove(team);
                 return true;
             }
@@ -74,7 +90,11 @@ namespace Sport_Statistics
 
         public Player FindPlayer(string name)
         {
-            foreach(Player player in Players)
+            if (name == null)
+            {
+                throw new ArgumentNullException(name);
+            }
+            foreach (Player player in Players)
             {
                 if (player.Name == name)
                 {
@@ -86,6 +106,10 @@ namespace Sport_Statistics
 
         public Team FindTeam(string name)
         {
+            if(name == null)
+            {
+                throw new ArgumentNullException(name);
+            }
             foreach (Team team in Teams)
             {
                 if (team.Name == name)
@@ -157,8 +181,14 @@ namespace Sport_Statistics
 
         public bool AddPlayerToTeam(Team team, Player player)
         {
-            if(team != null || player != null)
+            if (team == null)
             {
+                throw new ArgumentNullException(team.ToString());
+            }
+            if(player == null)
+            {
+                throw new ArgumentNullException(player.ToString());
+            }
                 foreach(Player players in team.TeamPlayers)
                 {
                     if(player == players)
@@ -168,15 +198,21 @@ namespace Sport_Statistics
                 }
                 team.TeamPlayers.Add(player);
                 return true;
-            }
+            
             return false;
         }
 
         public bool RemovePlayerFromTeam(Team team, Player player)
         {
-            if (team != null || player != null)
+            if (team == null)
             {
-                foreach(Player players in team.TeamPlayers)
+                throw new ArgumentNullException(team.ToString());
+            }
+            if (player == null)
+            {
+                throw new ArgumentNullException(player.ToString());
+            }
+            foreach (Player players in team.TeamPlayers)
                 {
                     if(players == player)
                     {
@@ -184,7 +220,7 @@ namespace Sport_Statistics
                         return true;
                     }
                 }
-            }
+            
             return false;
         }
     }
