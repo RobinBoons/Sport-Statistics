@@ -198,8 +198,6 @@ namespace Sport_Statistics
                 }
                 team.TeamPlayers.Add(player);
                 return true;
-            
-            return false;
         }
 
         public bool RemovePlayerFromTeam(Team team, Player player)
