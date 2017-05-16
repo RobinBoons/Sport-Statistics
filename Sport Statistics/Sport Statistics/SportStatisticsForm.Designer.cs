@@ -56,10 +56,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAssignToTeam = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSafeToFile = new System.Windows.Forms.Button();
-            this.btnLoadFromFile = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnDownLoad = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDAddPlayer)).BeginInit();
@@ -365,39 +364,26 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Naam:";
             // 
-            // btnSafeToFile
-            // 
-            this.btnSafeToFile.Location = new System.Drawing.Point(12, 421);
-            this.btnSafeToFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSafeToFile.Name = "btnSafeToFile";
-            this.btnSafeToFile.Size = new System.Drawing.Size(75, 23);
-            this.btnSafeToFile.TabIndex = 5;
-            this.btnSafeToFile.Text = "Safe";
-            this.btnSafeToFile.UseVisualStyleBackColor = true;
-            this.btnSafeToFile.Click += new System.EventHandler(this.btnSafeToFile_Click);
-            // 
-            // btnLoadFromFile
-            // 
-            this.btnLoadFromFile.Location = new System.Drawing.Point(93, 421);
-            this.btnLoadFromFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLoadFromFile.Name = "btnLoadFromFile";
-            this.btnLoadFromFile.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadFromFile.TabIndex = 6;
-            this.btnLoadFromFile.Text = "Load";
-            this.btnLoadFromFile.UseVisualStyleBackColor = true;
-            this.btnLoadFromFile.Click += new System.EventHandler(this.btnLoadFromFile_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnDownLoad
+            // 
+            this.btnDownLoad.Location = new System.Drawing.Point(12, 419);
+            this.btnDownLoad.Name = "btnDownLoad";
+            this.btnDownLoad.Size = new System.Drawing.Size(142, 47);
+            this.btnDownLoad.TabIndex = 5;
+            this.btnDownLoad.Text = "Download From Server";
+            this.btnDownLoad.UseVisualStyleBackColor = true;
+            this.btnDownLoad.Click += new System.EventHandler(this.btnDownLoad_Click);
             // 
             // SportStatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 454);
-            this.Controls.Add(this.btnLoadFromFile);
-            this.Controls.Add(this.btnSafeToFile);
+            this.ClientSize = new System.Drawing.Size(923, 472);
+            this.Controls.Add(this.btnDownLoad);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -434,8 +420,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRemovePlayer;
-        private System.Windows.Forms.Button btnSafeToFile;
-        private System.Windows.Forms.Button btnLoadFromFile;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.NumericUpDown nUDAddPlayer;
@@ -447,6 +431,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblSport;
         private System.Windows.Forms.ComboBox cbSport;
+        private System.Windows.Forms.Button btnDownLoad;
     }
 }
 

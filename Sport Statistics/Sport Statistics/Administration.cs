@@ -119,65 +119,7 @@ namespace Sport_Statistics
             }
             return null;
         }
-
-        public bool SafeToFile(string fileName) //Filesystem animalshelter
-        {
-            if (fileName != null)
-            {
-                if(fileName.Contains("."))
-                {
-                    string[] sFileName = fileName.Split('.');
-                    if(sFileName.Count() == 2 || sFileName[1].Length >= 3 || sFileName[1].Length <= 4)
-                    {
-                        fileName = sFileName[0];
-                    }
-                }
-                string file = fileName + ".plyr";
-                using (Stream FileStream = File.Open(file, FileMode.Create))
-                {
-                    BinaryFormatter serializer = new BinaryFormatter();
-                    serializer.Serialize(FileStream, Players);
-                    FileStream.Close();
-                }
-                file = fileName + ".team";
-                using (Stream FileStream = File.Open(file, FileMode.Create))
-                {
-                    BinaryFormatter serializer = new BinaryFormatter();
-                    serializer.Serialize(FileStream, Teams);
-                    FileStream.Close();
-                }
-                return true;
-            }
-            return false;
-        }
-
-        public bool LoadFromFile(string fileName) 
-        {
-            if (fileName != null)
-            {
-                if (fileName.Contains(".plyr"))
-                {
-                    using (Stream fileStream = File.Open(fileName, FileMode.Open))
-                    {
-                        BinaryFormatter bin = new BinaryFormatter();
-                        Teams = (List<Team>)bin.Deserialize(fileStream);
-                        fileStream.Close();
-                    }
-                    return true;
-                }
-                if (fileName.Contains(".team"))
-                {
-                    using (Stream fileStream = File.Open(fileName, FileMode.Open))
-                    {
-                        BinaryFormatter bin = new BinaryFormatter();
-                        Players = (List<Player>)bin.Deserialize(fileStream);
-                        fileStream.Close();
-                    }
-                    return true;
-                }
-            }
-            return false;
-        }
+               
 
         public bool AddPlayerToTeam(Team team, Player player)
         {
@@ -220,6 +162,18 @@ namespace Sport_Statistics
                 }
             
             return false;
+        }
+
+        public void TextToData(string inputData)
+        {
+            if(inputData == null) { throw new ArgumentNullException(inputData); }
+            string[] data = inputData.Split('/');
+            int count = data.Count<string>();
+            for (int i = 0; i < count; i++) //"Team 1", 2, 4 
+            {
+                string[] message = data[i].Split(',');
+
+            }
         }
     }
 }

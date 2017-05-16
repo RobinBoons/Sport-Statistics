@@ -52,7 +52,7 @@ namespace Sport_Statistics
             }
         }
 
-        private void btnSafeToFile_Click(object sender, EventArgs e)
+       /* private void btnSafeToFile_Click(object sender, EventArgs e)
         {
             try
             {
@@ -65,9 +65,9 @@ namespace Sport_Statistics
                 MessageBox.Show(exception.Message);
             }
             //TODO andere excepties afvangen
-        }
+        }*/
 
-        private void btnLoadFromFile_Click(object sender, EventArgs e)
+       /* private void btnLoadFromFile_Click(object sender, EventArgs e)
         {
             try
             {
@@ -96,7 +96,7 @@ namespace Sport_Statistics
                 MessageBox.Show(exception.Message);
             }
             //TODO andere excepties afvangen
-        }
+        } */
 
         private void btnAddNewTeam_Click(object sender, EventArgs e)
         {
@@ -255,5 +255,14 @@ namespace Sport_Statistics
             }
         }
 
+        private void btnDownLoad_Click(object sender, EventArgs e)
+        {
+            string SiteAddress = "http://192.168.43.167/";
+            System.Net.WebClient wc = new System.Net.WebClient();
+            string webData = wc.DownloadString(SiteAddress);
+            string[] splitedData = webData.Split('>');
+            string[] outputData = splitedData[2].Split('<');
+            string siteString = outputData[0];
+        }
     }
 }
