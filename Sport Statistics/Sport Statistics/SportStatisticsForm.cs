@@ -263,6 +263,7 @@ namespace Sport_Statistics
             string[] splitedData = webData.Split('>');
             string[] outputData = splitedData[2].Split('<');
             string siteString = outputData[0];
+            administratie.TextToData(siteString, game);
         }
     }
 }

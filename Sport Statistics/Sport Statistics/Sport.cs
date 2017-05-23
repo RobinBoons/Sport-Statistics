@@ -8,8 +8,8 @@ namespace Sport_Statistics
 {
     public abstract class Sport
     {
-        public decimal Score { get; private set; }
-        public decimal Attempts { get; private set; }
+        public decimal Score { get; set; }
+        public decimal Attempts { get; set; }
         public decimal ScorePercentage { get; private set; }
 
         public Sport(decimal score, decimal attempts, decimal scorePercentage)
@@ -46,5 +46,8 @@ namespace Sport_Statistics
         {
             return Score + ", " + Attempts + ", " + ScorePercentage;
         }
+
+        public abstract void addStatics(int propName);
+        
     }
 }

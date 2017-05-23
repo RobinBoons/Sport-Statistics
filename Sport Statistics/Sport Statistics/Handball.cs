@@ -8,10 +8,10 @@ namespace Sport_Statistics
 {
     public class Handball : Sport
     {
-        public int TimePenaltys { get; private set; }
-        public int Yellowcards { get; private set; }
-        public int Exclusions { get; private set; }
-        public int Breakouts { get; private set; }
+        public int TimePenaltys { get; set; }
+        public int Yellowcards { get; set; }
+        public int Exclusions { get; set; }
+        public int Breakouts { get; set; }
 
         public Handball(decimal score, decimal attempts, decimal scorePercentage, int timePenaltys, int yellowCards, int exclusions, int breakouts): base(score, attempts, scorePercentage)
         {
@@ -45,5 +45,21 @@ namespace Sport_Statistics
                                    + ", " + Exclusions
                                    + ", " + Breakouts;
         }
+
+        public override void addStatics(int propName)
+        {
+            switch(propName)
+            {
+                case 3: TimePenaltys++;
+                    break;
+                case 4: Yellowcards++;
+                    break;
+                case 5: Exclusions++;
+                    break;
+                case 6: Breakouts++;
+                    break;
+            }
+        }
+
     }
 }

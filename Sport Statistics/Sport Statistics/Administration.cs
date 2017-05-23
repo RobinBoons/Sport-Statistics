@@ -12,11 +12,13 @@ namespace Sport_Statistics
     {
         public List<Team> Teams;
         public List<Player> Players;
+        public List<Game> Games;
 
         public Administration()
         {
             Teams = new List<Team>();
             Players = new List<Player>();
+            Games = new List<Game>();
         }
 
 
@@ -164,23 +166,42 @@ namespace Sport_Statistics
             return false;
         }
 
-        public void TextToData(string inputData)
+        public void TextToData(string inputData, Game game)
         {
             if(inputData == null) { throw new ArgumentNullException(inputData); }
             string[] data = inputData.Split('/');
             int count = data.Count<string>();
+            Team thuis = game.Thuis;
+            Team uit = game.Uit;
+            Player player = null;
             for (int i = 0; i < count; i++) //Team 1, 2, 4 
             {
                 string[] message = data[i].Split(',');
                 if(message[0] == "1")
                 {
-
+                    int index = Convert.ToInt32(message[1]);
+                    player = thuis.TeamPlayers[index];
                 }
                 else if(message[0] == "2")
                 {
-
+                    int index = Convert.ToInt32(message[1]);
+                    player = uit.TeamPlayers[index];
                 }
 
+                if(player.Sport is Handball)
+                {
+                    int index = Convert.ToInt32(message[2]);
+                    switch(index)
+                    {
+                        case 1: player.Sport.Score++;
+                            break;
+                        case 2: player.Sport.Attempts++;
+                            break;
+                        default: player.Sport.addStatics(index);
+                            break;
+                    }
+                }
+                
                 
             }
         }

@@ -117,5 +117,44 @@ namespace Sport_Statistics
                                    + ", " + Steals
                                    + ", " + Assists;
         }
+
+        public override void addStatics(int propName)
+        {
+            switch (propName)
+            {
+                case 3:
+                    FreeThrowMade++;
+                    break;
+                case 4:
+                    FreeThrowAttempts++;
+                    break;
+                case 5:
+                    Rebounds++;
+                    break;
+                case 6:
+                    TurnOvers++;
+                    break;
+                case 7:
+                    Fouls++;
+                    break;
+                case 8:
+                    TeamFouls++;
+                    break;
+                case 9:
+                    Steals++;
+                    break;
+                case 10:
+                    Assists++;
+                    break;
+                case 11:
+                    ThreePointersAttempted++;
+                    break;
+                case 12:
+                    ThreePointersMade++;
+                    break;
+            }
+            ThreePointersPercentage = CalculateNewPercentage(ThreePointersMade, ThreePointersAttempted);
+            
+        }
     }
 }

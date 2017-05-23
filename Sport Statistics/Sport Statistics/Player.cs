@@ -11,7 +11,7 @@ namespace Sport_Statistics
     {
         public string Name { get; private set; }
         public int Number { get; private set; }
-        public Sport Sport { get; private set; }
+        public Sport Sport { get; set; }
         
 
         public Player(string name, int number, Sport sport)
