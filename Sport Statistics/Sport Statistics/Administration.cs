@@ -170,6 +170,7 @@ namespace Sport_Statistics
         {
             if(inputData == null) { throw new ArgumentNullException(inputData); }
             string[] data = inputData.Split('/');
+            game.AddToDatalog(data);
             int count = data.Count<string>();
             Team thuis = game.Thuis;
             Team uit = game.Uit;
@@ -197,7 +198,7 @@ namespace Sport_Statistics
                             break;
                         case 2: player.Sport.Attempts++;
                             break;
-                        default: player.Sport.addStatics(index);
+                        default: player.Sport.AddStatics(index);
                             break;
                     }
                 }

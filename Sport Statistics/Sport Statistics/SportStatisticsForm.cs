@@ -257,13 +257,50 @@ namespace Sport_Statistics
 
         private void btnDownLoad_Click(object sender, EventArgs e)
         {
-            string SiteAddress = "http://192.168.43.167/";
-            System.Net.WebClient wc = new System.Net.WebClient();
-            string webData = wc.DownloadString(SiteAddress);
-            string[] splitedData = webData.Split('>');
-            string[] outputData = splitedData[2].Split('<');
-            string siteString = outputData[0];
-            administratie.TextToData(siteString, game);
+            //string SiteAddress = "http://192.168.43.167/";
+            //System.Net.WebClient wc = new System.Net.WebClient();
+            //string webData = wc.DownloadString(SiteAddress);
+            //string[] splitedData = webData.Split('>');
+            //string[] outputData = splitedData[2].Split('<');
+            string siteString = "1,0,1/1,0,1/1,0,1"; //outputData[0]; //TODO realdata
+            Game playedGame = null;
+            foreach(Game game in administratie.Games)
+            {
+                if(game.Thuis == lbGame.Items[0] && game.Uit == lbGame.Items[1])
+                {
+                    playedGame = game;
+                    break;
+                }
+
+            }
+            if (playedGame != null)
+            {
+                administratie.TextToData(siteString, playedGame);
+            }
+        }
+
+        private void btnMakeGame_Click(object sender, EventArgs e)
+        {
+            if (lbGame.Items.Count > 2)
+            {
+                lbGame.Items.Clear();
+            }
+            if (lbTeams.SelectedItem != null)
+            {
+                Team team = (Team)lbTeams.SelectedItem;
+                team = administratie.FindTeam(team.Name);
+                lbGame.Items.Add(team);
+            }
+            
+        }
+
+        private void btnAddGame_Click(object sender, EventArgs e)
+        {
+            if(lbGame.Items.Count == 2)
+            {
+                Game game = new Game((Team)lbGame.Items[0], (Team)lbGame.Items[1]);
+                administratie.Games.Add(game);
+            }
         }
     }
 }

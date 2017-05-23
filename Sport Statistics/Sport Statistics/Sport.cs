@@ -47,7 +47,7 @@ namespace Sport_Statistics
             return Score + ", " + Attempts + ", " + ScorePercentage;
         }
 
-        public abstract void addStatics(int propName);
+        public abstract void AddStatics(int propName);
         
     }
 }

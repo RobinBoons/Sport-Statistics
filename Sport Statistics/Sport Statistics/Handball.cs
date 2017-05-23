@@ -46,7 +46,7 @@ namespace Sport_Statistics
                                    + ", " + Breakouts;
         }
 
-        public override void addStatics(int propName)
+        public override void AddStatics(int propName)
         {
             switch(propName)
             {

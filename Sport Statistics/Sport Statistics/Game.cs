@@ -8,9 +8,24 @@ namespace Sport_Statistics
 {
     public class Game
     {
-        public Team thuis { get; }
-        public Team uit { get; }
+        public Team Thuis { get; set; }
+        public Team Uit { get; set; }
 
-        List<string> GameLog = new List<string>();
+        public List<string> GameLog { get; private set; }
+
+        public Game(Team thuis, Team uit)
+        {
+            GameLog = new List<string>();
+            Thuis = thuis;
+            Uit = uit;
+        }
+
+        public void AddToDatalog(string[] dataArray)
+        {
+            for(int i = 0; i < dataArray.Count(); i++)
+            {
+                GameLog.Add(dataArray[i]);
+            }
+        }
     }
 }

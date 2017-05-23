@@ -118,7 +118,7 @@ namespace Sport_Statistics
                                    + ", " + Assists;
         }
 
-        public override void addStatics(int propName)
+        public override void AddStatics(int propName)
         {
             switch (propName)
             {

@@ -59,9 +59,14 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnDownLoad = new System.Windows.Forms.Button();
+            this.btnMakeGame = new System.Windows.Forms.Button();
+            this.lbGame = new System.Windows.Forms.ListBox();
+            this.gbGame = new System.Windows.Forms.GroupBox();
+            this.btnAddGame = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDAddPlayer)).BeginInit();
+            this.gbGame.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTeams
@@ -378,11 +383,53 @@
             this.btnDownLoad.UseVisualStyleBackColor = true;
             this.btnDownLoad.Click += new System.EventHandler(this.btnDownLoad_Click);
             // 
+            // btnMakeGame
+            // 
+            this.btnMakeGame.Location = new System.Drawing.Point(160, 419);
+            this.btnMakeGame.Name = "btnMakeGame";
+            this.btnMakeGame.Size = new System.Drawing.Size(183, 57);
+            this.btnMakeGame.TabIndex = 6;
+            this.btnMakeGame.Text = "Voeg Team Toe Aan Wedstrijd";
+            this.btnMakeGame.UseVisualStyleBackColor = true;
+            this.btnMakeGame.Click += new System.EventHandler(this.btnMakeGame_Click);
+            // 
+            // lbGame
+            // 
+            this.lbGame.FormattingEnabled = true;
+            this.lbGame.ItemHeight = 16;
+            this.lbGame.Location = new System.Drawing.Point(6, 21);
+            this.lbGame.Name = "lbGame";
+            this.lbGame.Size = new System.Drawing.Size(188, 36);
+            this.lbGame.TabIndex = 7;
+            // 
+            // gbGame
+            // 
+            this.gbGame.Controls.Add(this.btnAddGame);
+            this.gbGame.Controls.Add(this.lbGame);
+            this.gbGame.Location = new System.Drawing.Point(360, 419);
+            this.gbGame.Name = "gbGame";
+            this.gbGame.Size = new System.Drawing.Size(200, 121);
+            this.gbGame.TabIndex = 8;
+            this.gbGame.TabStop = false;
+            this.gbGame.Text = "groupBox3";
+            // 
+            // btnAddGame
+            // 
+            this.btnAddGame.Location = new System.Drawing.Point(6, 77);
+            this.btnAddGame.Name = "btnAddGame";
+            this.btnAddGame.Size = new System.Drawing.Size(188, 38);
+            this.btnAddGame.TabIndex = 8;
+            this.btnAddGame.Text = "Voeg Wedstrijd Toe";
+            this.btnAddGame.UseVisualStyleBackColor = true;
+            this.btnAddGame.Click += new System.EventHandler(this.btnAddGame_Click);
+            // 
             // SportStatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 472);
+            this.ClientSize = new System.Drawing.Size(923, 581);
+            this.Controls.Add(this.gbGame);
+            this.Controls.Add(this.btnMakeGame);
             this.Controls.Add(this.btnDownLoad);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -395,6 +442,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDAddPlayer)).EndInit();
+            this.gbGame.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -432,6 +480,10 @@
         private System.Windows.Forms.Label lblSport;
         private System.Windows.Forms.ComboBox cbSport;
         private System.Windows.Forms.Button btnDownLoad;
+        private System.Windows.Forms.Button btnMakeGame;
+        private System.Windows.Forms.ListBox lbGame;
+        private System.Windows.Forms.GroupBox gbGame;
+        private System.Windows.Forms.Button btnAddGame;
     }
 }
 
