@@ -169,10 +169,19 @@ namespace Sport_Statistics
             if(inputData == null) { throw new ArgumentNullException(inputData); }
             string[] data = inputData.Split('/');
             int count = data.Count<string>();
-            for (int i = 0; i < count; i++) //"Team 1", 2, 4 
+            for (int i = 0; i < count; i++) //Team 1, 2, 4 
             {
                 string[] message = data[i].Split(',');
+                if(message[0] == "1")
+                {
 
+                }
+                else if(message[0] == "2")
+                {
+
+                }
+
+                
             }
         }
     }
