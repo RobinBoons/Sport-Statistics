@@ -288,21 +288,28 @@ namespace Sport_Statistics
 
         private void btnAddGame_Click(object sender, EventArgs e)
         {
-            if(lbGame.Items.Count == 2)
+            if (lbGame.Items.Count == 2)
             {
                 Team home = (Team)lbGame.Items[0];
                 Team away = (Team)lbGame.Items[1];
-                if (home != away)
+                if (home.TeamPlayers.Count < 1 || away.TeamPlayers.Count < 1)
                 {
-                    Game game = new Game(home, away);
-                    administratie.Games.Add(game);
-                    lbGames.Items.Add(game);
-                    lbGame.Items.Clear();
+                    MessageBox.Show("Een Team Moet Spelers Hebben!");
                 }
                 else
                 {
-                    MessageBox.Show("Een team kan niet tegen zichzelf spelen!");
-                    lbGame.Items.Clear();
+                    if (home != away)
+                    {
+                        Game game = new Game(home, away);
+                        administratie.Games.Add(game);
+                        lbGames.Items.Add(game);
+                        lbGame.Items.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Een team kan niet tegen zichzelf spelen!");
+                        lbGame.Items.Clear();
+                    }
                 }
             }
         }
