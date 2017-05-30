@@ -27,5 +27,12 @@ namespace Sport_Statistics
                 GameLog.Add(dataArray[i]);
             }
         }
+
+        public override string ToString()
+        {
+            return Thuis.Name + " - " + Uit.Name;
+        }
+
+
     }
 }

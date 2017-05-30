@@ -121,7 +121,23 @@ namespace Sport_Statistics
             }
             return null;
         }
-               
+
+        public Game FindGame(Game game)
+        {
+            if (game == null)
+            {
+                throw new ArgumentNullException(game.ToString());
+            }
+            foreach (Game fgame in Games)
+            {
+                if (fgame.Uit == game.Uit && fgame.Thuis == game.Thuis && game.GameLog == fgame.GameLog)
+                {
+                    return fgame;
+                }
+            }
+            return null;
+        }
+
 
         public bool AddPlayerToTeam(Team team, Player player)
         {

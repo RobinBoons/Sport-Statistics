@@ -263,19 +263,11 @@ namespace Sport_Statistics
             //string[] splitedData = webData.Split('>');
             //string[] outputData = splitedData[2].Split('<');
             string siteString = "1,0,1/1,0,1/1,0,1"; //outputData[0]; //TODO realdata
-            Game playedGame = null;
-            foreach(Game game in administratie.Games)
+            Game game = (Game)lbGames.SelectedItem;
+            if (game != null)
             {
-                if(game.Thuis == lbGame.Items[0] && game.Uit == lbGame.Items[1])
-                {
-                    playedGame = game;
-                    break;
-                }
-
-            }
-            if (playedGame != null)
-            {
-                administratie.TextToData(siteString, playedGame);
+                Game foundGame = administratie.FindGame(game);
+                administratie.TextToData(siteString, foundGame);
             }
         }
 
@@ -298,9 +290,55 @@ namespace Sport_Statistics
         {
             if(lbGame.Items.Count == 2)
             {
-                Game game = new Game((Team)lbGame.Items[0], (Team)lbGame.Items[1]);
-                administratie.Games.Add(game);
+                Team home = (Team)lbGame.Items[0];
+                Team away = (Team)lbGame.Items[1];
+                if (home != away)
+                {
+                    Game game = new Game(home, away);
+                    administratie.Games.Add(game);
+                    lbGames.Items.Add(game);
+                    lbGame.Items.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Een team kan niet tegen zichzelf spelen!");
+                    lbGame.Items.Clear();
+                }
             }
+        }
+
+        private void lbGames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Game game = (Game)lbGames.SelectedItem;
+            if(game != null)
+            {
+                lbGameLog.Items.Clear();
+                Game foundGame = administratie.FindGame(game);
+                foreach(string Event in foundGame.GameLog)
+                {
+                    lbGameLog.Items.Add(Event);
+                }
+                if(lbGameLog.Items.Count == 0)
+                {
+                    lbGameLog.Items.Add("No Data Yet");
+                }
+            }
+        }
+
+        private void btnRemoveGame_Click(object sender, EventArgs e)
+        {
+            Game game = (Game)lbGames.SelectedItem;
+            if (game != null)
+            {
+                lbGameLog.Items.Clear();
+                Game foundGame = administratie.FindGame(game);
+                administratie.Games.Remove(foundGame);
+            }
+        }
+
+        private void btnClearNewGame_Click(object sender, EventArgs e)
+        {
+            lbGame.Items.Clear();
         }
     }
 }
