@@ -8,6 +8,17 @@ using System.IO;
 
 namespace Sport_Statistics
 {
+
+    public struct pointI
+    {
+        int Beat, Time;
+        public pointI(int beat, int time)
+        {
+            Beat = beat;
+            Time = time;
+        }
+
+    }
     class Administration
     {
         public List<Team> Teams;

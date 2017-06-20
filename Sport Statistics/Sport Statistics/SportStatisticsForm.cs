@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Sport_Statistics
 {
@@ -246,12 +247,24 @@ namespace Sport_Statistics
 
         private void lbPlayers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            chart1.Series.Clear();
             Player player = (Player)lbPlayers.SelectedItem;
             if (player != null)
             {
                 lblGoals.Text = player.Sport.Score.ToString();
                 lbPercentage.Text = player.Sport.ScorePercentage.ToString();
                 lbShotsOnTarget.Text = player.Sport.Attempts.ToString();
+                var series = new Series("Heart Beat");
+                series.ChartType = SeriesChartType.Line;
+                // Frist parameter is X-Axis and Second is Collection of Y- Axis
+                foreach (pointI point in player.HeartBeat)
+                {
+                    series.Points.DataBindXY(new[] { 2001, 2002, 2003, 2004 }, new[] { 100, 200, 90, 150 });
+                    //series.Points.DataBindXY(player.HeartBeat, );
+                }
+                chart1.Series.Add(series);
+
+                
             }
         }
 

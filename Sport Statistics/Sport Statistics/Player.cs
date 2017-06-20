@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Sport_Statistics
 {
+
+ 
     [Serializable]
     public class Player
     {
         public string Name { get; private set; }
         public int Number { get; private set; }
         public Sport Sport { get; set; }
-        
+        public List<pointI> HeartBeat { get; set; }
 
         public Player(string name, int number, Sport sport)
         {
@@ -30,7 +32,7 @@ namespace Sport_Statistics
             {
                 throw new ArgumentNullException();
             }
-
+            HeartBeat = new List<pointI>();
             Name = name;
             Number = number;
             Sport = sport;

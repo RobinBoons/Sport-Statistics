@@ -28,10 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.lbTeams = new System.Windows.Forms.ListBox();
             this.lbTeamSpelers = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRemoveTeam = new System.Windows.Forms.Button();
+            this.btnMakeGame = new System.Windows.Forms.Button();
             this.tbNewTeamClub = new System.Windows.Forms.TextBox();
             this.btnAddNewTeam = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,19 +62,20 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnDownLoad = new System.Windows.Forms.Button();
-            this.btnMakeGame = new System.Windows.Forms.Button();
             this.lbGame = new System.Windows.Forms.ListBox();
             this.gbGame = new System.Windows.Forms.GroupBox();
+            this.btnClearNewGame = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbGameLog = new System.Windows.Forms.ListBox();
             this.btnAddGame = new System.Windows.Forms.Button();
             this.lbGames = new System.Windows.Forms.ListBox();
             this.btnRemoveGame = new System.Windows.Forms.Button();
-            this.lbGameLog = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnClearNewGame = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDAddPlayer)).BeginInit();
             this.gbGame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTeams
@@ -126,6 +130,16 @@
             this.btnRemoveTeam.Text = "Verwijder";
             this.btnRemoveTeam.UseVisualStyleBackColor = true;
             this.btnRemoveTeam.Click += new System.EventHandler(this.btnRemoveTeam_Click);
+            // 
+            // btnMakeGame
+            // 
+            this.btnMakeGame.Location = new System.Drawing.Point(5, 313);
+            this.btnMakeGame.Name = "btnMakeGame";
+            this.btnMakeGame.Size = new System.Drawing.Size(279, 33);
+            this.btnMakeGame.TabIndex = 6;
+            this.btnMakeGame.Text = "Voeg Team Toe Aan Nieuwe Wedstrijd";
+            this.btnMakeGame.UseVisualStyleBackColor = true;
+            this.btnMakeGame.Click += new System.EventHandler(this.btnMakeGame_Click);
             // 
             // tbNewTeamClub
             // 
@@ -389,16 +403,6 @@
             this.btnDownLoad.UseVisualStyleBackColor = true;
             this.btnDownLoad.Click += new System.EventHandler(this.btnDownLoad_Click);
             // 
-            // btnMakeGame
-            // 
-            this.btnMakeGame.Location = new System.Drawing.Point(5, 313);
-            this.btnMakeGame.Name = "btnMakeGame";
-            this.btnMakeGame.Size = new System.Drawing.Size(279, 33);
-            this.btnMakeGame.TabIndex = 6;
-            this.btnMakeGame.Text = "Voeg Team Toe Aan Nieuwe Wedstrijd";
-            this.btnMakeGame.UseVisualStyleBackColor = true;
-            this.btnMakeGame.Click += new System.EventHandler(this.btnMakeGame_Click);
-            // 
             // lbGame
             // 
             this.lbGame.FormattingEnabled = true;
@@ -424,6 +428,34 @@
             this.gbGame.TabIndex = 8;
             this.gbGame.TabStop = false;
             this.gbGame.Text = "Wedstrijd";
+            // 
+            // btnClearNewGame
+            // 
+            this.btnClearNewGame.Location = new System.Drawing.Point(8, 416);
+            this.btnClearNewGame.Name = "btnClearNewGame";
+            this.btnClearNewGame.Size = new System.Drawing.Size(192, 38);
+            this.btnClearNewGame.TabIndex = 13;
+            this.btnClearNewGame.Text = "Clear";
+            this.btnClearNewGame.UseVisualStyleBackColor = true;
+            this.btnClearNewGame.Click += new System.EventHandler(this.btnClearNewGame_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 313);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(121, 17);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Nieuwe Wedstrijd:";
+            // 
+            // lbGameLog
+            // 
+            this.lbGameLog.FormattingEnabled = true;
+            this.lbGameLog.ItemHeight = 16;
+            this.lbGameLog.Location = new System.Drawing.Point(206, 21);
+            this.lbGameLog.Name = "lbGameLog";
+            this.lbGameLog.Size = new System.Drawing.Size(192, 148);
+            this.lbGameLog.TabIndex = 11;
             // 
             // btnAddGame
             // 
@@ -455,39 +487,24 @@
             this.btnRemoveGame.UseVisualStyleBackColor = true;
             this.btnRemoveGame.Click += new System.EventHandler(this.btnRemoveGame_Click);
             // 
-            // lbGameLog
+            // chart1
             // 
-            this.lbGameLog.FormattingEnabled = true;
-            this.lbGameLog.ItemHeight = 16;
-            this.lbGameLog.Location = new System.Drawing.Point(206, 21);
-            this.lbGameLog.Name = "lbGameLog";
-            this.lbGameLog.Size = new System.Drawing.Size(192, 148);
-            this.lbGameLog.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 313);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 17);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Nieuwe Wedstrijd:";
-            // 
-            // btnClearNewGame
-            // 
-            this.btnClearNewGame.Location = new System.Drawing.Point(8, 416);
-            this.btnClearNewGame.Name = "btnClearNewGame";
-            this.btnClearNewGame.Size = new System.Drawing.Size(192, 38);
-            this.btnClearNewGame.TabIndex = 13;
-            this.btnClearNewGame.Text = "Clear";
-            this.btnClearNewGame.UseVisualStyleBackColor = true;
-            this.btnClearNewGame.Click += new System.EventHandler(this.btnClearNewGame_Click);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(1192, 20);
+            this.chart1.Name = "chart1";
+            this.chart1.Size = new System.Drawing.Size(300, 300);
+            this.chart1.TabIndex = 9;
+            this.chart1.Text = "chart1";
             // 
             // SportStatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 495);
+            this.ClientSize = new System.Drawing.Size(1540, 495);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.gbGame);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -502,6 +519,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUDAddPlayer)).EndInit();
             this.gbGame.ResumeLayout(false);
             this.gbGame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -548,6 +566,7 @@
         private System.Windows.Forms.ListBox lbGames;
         private System.Windows.Forms.Button btnRemoveGame;
         private System.Windows.Forms.Button btnClearNewGame;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
